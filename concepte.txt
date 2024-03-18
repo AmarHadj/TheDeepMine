@@ -1,0 +1,9 @@
+un jeu de plateforme invérsée
+comme jump king mais au lieu de vouloir monter toujours plus haut il faut descendre toujours plus bas
+dans une mine, il faut trouver un minerais rare qui se terre dans les profondeurs de la mine
+un mélange de plateforme et d'ennemies sur lesquels on doit rebondir pour amortir sa chute
+si on chute trop rapidement on meurt et on recommence le tableau 
+plus on arrive a tuer d'ennemies sans toucher le sol plus on a de points.
+certains objets nous permette de planer pour mieux faire certains sauts ou des doubles sauts.
+la pioche peut servir a s'accrocher a certains murs.
+
