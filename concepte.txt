@@ -1,9 +1,31 @@
 un jeu de plateforme invérsée
 comme jump king mais au lieu de vouloir monter toujours plus haut il faut descendre toujours plus bas
 dans une mine, il faut trouver un minerais rare qui se terre dans les profondeurs de la mine
-un mélange de plateforme et d'ennemies sur lesquels on doit rebondir pour amortir sa chute
+un mélange de plateforme et d'ennemies sur lesquels on doit rebondir pour amortir sa chute (plateforme fragile aussi)
 si on chute trop rapidement on meurt et on recommence le tableau 
 plus on arrive a tuer d'ennemies sans toucher le sol plus on a de points.
 certains objets nous permette de planer pour mieux faire certains sauts ou des doubles sauts.
 la pioche peut servir a s'accrocher a certains murs.
 
+
+Les éléments à designer : 
+
+Le personnage : 	48X48 pixel (bleu claire)	[]
+
+Les monstres : 		32X32 pixels (rouge)		[]
+
+Le niveau : 		960X540 pixels (gris)		[]
+
+Les plateformes :	??X32 pixels (noire)		[]
+
+Les ailes : 		64X32 pixels (blanche)		[]
+
+La pioche : 		13X23 pixels (brun)		[]
+
+Bottes à double sauts : 32X16 (orange)			[]
+
+Menu principale :	960X540 (Noire)			[]
+
+Titre :			800X112 (Blanc)			[]
+
+Boutons	:		257X112 (Orange)		[]
