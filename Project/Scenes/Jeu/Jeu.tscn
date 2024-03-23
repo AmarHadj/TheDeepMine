@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct4k5ypthlkga"]
+
+[ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/fond.png" id="1_temh8"]
+[ext_resource type="PackedScene" uid="uid://3bdts11w1w6w" path="res://Objet/Entites/Joueur.tscn" id="2_l1ctr"]
+[ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Plateformes/plateforme_test.tscn" id="3_83iqn"]
+[ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/Entites/Monstre.tscn" id="4_vyed2"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Fond" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("1_temh8")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_l1ctr")]
+position = Vector2(183, 130)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_83iqn")]
+position = Vector2(480, 455)
+
+[node name="limite" type="Node" parent="."]
+
+[node name="StaticBody2D3" parent="limite" instance=ExtResource("3_83iqn")]
+visible = false
+position = Vector2(-15, 60)
+rotation = 1.5708
+
+[node name="StaticBody2D2" parent="limite" instance=ExtResource("3_83iqn")]
+visible = false
+position = Vector2(977, 60)
+rotation = 1.5708
+
+[node name="StaticBody2D4" parent="limite" instance=ExtResource("3_83iqn")]
+visible = false
+position = Vector2(480, 555)
+
+[node name="StaticBody2D5" parent="limite" instance=ExtResource("3_83iqn")]
+visible = false
+position = Vector2(480, -17)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("4_vyed2")]
+position = Vector2(838, 206)

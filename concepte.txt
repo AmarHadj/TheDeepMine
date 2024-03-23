@@ -29,3 +29,29 @@ Menu principale :	960X540 (Noire)			[]
 Titre :			800X112 (Blanc)			[]
 
 Boutons	:		257X112 (Orange)		[]
+
+
+Les éléments à coder : 
+
+Les mouvements						[]
+
+Les monstres 						[]
+
+Le menu pause						[]
+
+Les plateformes fragiles				[]
+
+La lévitation						[]
+
+La pioche						[]
+
+Bottes à double sauts					[]
+
+Menu principale						[x]
+
+écran de game over					[]
+
+Interaction du joueur					[]
+
+
+
