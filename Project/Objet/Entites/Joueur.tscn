@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://3bdts11w1w6w"]
+[gd_scene load_steps=4 format=3 uid="uid://b6h6uy02l64em"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_sdugo"]
+[ext_resource type="Script" path="res://Scripts/Joueur.gd" id="1_sdugo"]
 [ext_resource type="Texture2D" uid="uid://cj358tyc3iqay" path="res://Art/personnage.png" id="2_l8eut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4452"]
@@ -14,3 +14,23 @@ shape = SubResource("RectangleShape2D_c4452")
 
 [node name="Personnage" type="Sprite2D" parent="."]
 texture = ExtResource("2_l8eut")
+
+[node name="BounceRayCasts" type="Node2D" parent="."]
+
+[node name="RayCast2D3" type="RayCast2D" parent="BounceRayCasts"]
+position = Vector2(24, 24)
+target_position = Vector2(0, 4)
+collision_mask = 8
+collide_with_areas = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="BounceRayCasts"]
+position = Vector2(-24, 24)
+target_position = Vector2(0, 4)
+collision_mask = 8
+collide_with_areas = true
+
+[node name="RayCast2D" type="RayCast2D" parent="BounceRayCasts"]
+position = Vector2(0, 24)
+target_position = Vector2(0, 4)
+collision_mask = 8
+collide_with_areas = true
