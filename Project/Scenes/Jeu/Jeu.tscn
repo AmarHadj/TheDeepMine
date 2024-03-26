@@ -33,11 +33,26 @@ position = Vector2(480, 270)
 texture = ExtResource("1_temh8")
 
 [node name="Joueur" parent="." instance=ExtResource("2_l1ctr")]
-position = Vector2(214, 398)
+position = Vector2(143, 77)
 
-[node name="Ennemi" parent="." instance=ExtResource("4_vyed2")]
-position = Vector2(667, 396)
+[node name="ennemies" type="Node" parent="."]
+
+[node name="Ennemi4" parent="ennemies" instance=ExtResource("4_vyed2")]
+position = Vector2(614, 200)
 script = ExtResource("5_iphg2")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("3_83iqn")]
-position = Vector2(480, 455)
+[node name="Ennemi3" parent="ennemies" instance=ExtResource("4_vyed2")]
+position = Vector2(519, 221)
+script = ExtResource("5_iphg2")
+
+[node name="Ennemi" parent="ennemies" instance=ExtResource("4_vyed2")]
+position = Vector2(359, 171)
+script = ExtResource("5_iphg2")
+
+[node name="Plateformes" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Plateformes" instance=ExtResource("3_83iqn")]
+position = Vector2(-293, 128)
+
+[node name="StaticBody2D2" parent="Plateformes" instance=ExtResource("3_83iqn")]
+position = Vector2(1208, 233)
