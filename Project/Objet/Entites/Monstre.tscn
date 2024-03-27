@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ossu14s46i56"]
+[gd_scene load_steps=6 format=3 uid="uid://ossu14s46i56"]
 
 [ext_resource type="Texture2D" uid="uid://dkxqih3xtsdf7" path="res://Art/Monstre.png" id="1_6cvml"]
+[ext_resource type="Script" path="res://Monstre.gd" id="1_bo004"]
 [ext_resource type="PackedScene" uid="uid://c584bi5h3inla" path="res://Scenes/Jeu/bounce_area.tscn" id="2_v1waa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b2d6"]
@@ -10,6 +11,11 @@ size = Vector2(32, 32)
 size = Vector2(32, 6)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_bo004")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -24,3 +30,9 @@ texture = ExtResource("1_6cvml")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bounceArea"]
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_xwvhx")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

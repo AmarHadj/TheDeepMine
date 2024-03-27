@@ -7,6 +7,8 @@
 size = Vector2(47.75, 47.5)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_sdugo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
