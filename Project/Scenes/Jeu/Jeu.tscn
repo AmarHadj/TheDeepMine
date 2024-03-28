@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl4kj0vxmicne"]
+[gd_scene load_steps=5 format=3 uid="uid://cl4kj0vxmicne"]
 
 [ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/fond.png" id="1_temh8"]
 [ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/Entites/Joueur.tscn" id="2_l1ctr"]
 [ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Plateformes/plateforme_test.tscn" id="3_83iqn"]
 [ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/Entites/Monstre.tscn" id="4_vyed2"]
-[ext_resource type="Script" path="res://Scripts/bounce.gd" id="5_bjejx"]
 
 [node name="Game" type="Node2D"]
 
@@ -33,21 +32,14 @@ position = Vector2(480, 270)
 texture = ExtResource("1_temh8")
 
 [node name="Joueur" parent="." instance=ExtResource("2_l1ctr")]
-position = Vector2(143, 77)
+position = Vector2(810, 102)
 
 [node name="ennemies" type="Node" parent="."]
 
-[node name="Ennemi4" parent="ennemies" instance=ExtResource("4_vyed2")]
-position = Vector2(614, 200)
-script = ExtResource("5_bjejx")
-
-[node name="Ennemi3" parent="ennemies" instance=ExtResource("4_vyed2")]
-position = Vector2(519, 221)
-script = ExtResource("5_bjejx")
-
-[node name="Ennemi" parent="ennemies" instance=ExtResource("4_vyed2")]
-position = Vector2(359, 171)
-script = ExtResource("5_bjejx")
+[node name="CharacterBody2D" parent="ennemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("4_vyed2")]
+position = Vector2(211, 236)
+position1 = NodePath("../../position ennemie/position1")
+position2 = NodePath("../../position ennemie/position2")
 
 [node name="Plateformes" type="Node" parent="."]
 
@@ -56,3 +48,11 @@ position = Vector2(-293, 128)
 
 [node name="StaticBody2D2" parent="Plateformes" instance=ExtResource("3_83iqn")]
 position = Vector2(1208, 233)
+
+[node name="position ennemie" type="Node" parent="."]
+
+[node name="position2" type="Node2D" parent="position ennemie"]
+position = Vector2(211, 236)
+
+[node name="position1" type="Node2D" parent="position ennemie"]
+position = Vector2(685, 237)
