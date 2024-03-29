@@ -37,7 +37,7 @@ position = Vector2(810, 102)
 [node name="ennemies" type="Node" parent="."]
 
 [node name="CharacterBody2D" parent="ennemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("4_vyed2")]
-position = Vector2(211, 236)
+position = Vector2(365, 234)
 position1 = NodePath("../../position ennemie/position1")
 position2 = NodePath("../../position ennemie/position2")
 
