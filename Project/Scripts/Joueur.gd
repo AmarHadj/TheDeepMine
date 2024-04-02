@@ -41,3 +41,14 @@ func _check_bounce(delta):
 				break
 func bounce (bounce_velocity = BOUNCE_VELOCITY):
 	velocity.y = bounce_velocity
+
+
+func stop_moving():
+	self.rigid_body.set_sleeping(true)
+
+func die():
+	stop_moving()
+
+func get_hit():
+	die()
+
