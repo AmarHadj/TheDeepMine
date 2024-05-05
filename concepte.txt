@@ -35,7 +35,7 @@ Les éléments à coder :
 
 Les mouvements						[X]
 
-Les monstres 						[]
+Les monstres 						[X]
 
 Le menu pause						[]
 

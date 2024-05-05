@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl4kj0vxmicne"]
+[gd_scene load_steps=6 format=3 uid="uid://cl4kj0vxmicne"]
 
 [ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/fond.png" id="1_temh8"]
 [ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/Entites/Joueur.tscn" id="2_l1ctr"]
 [ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Plateformes/plateforme_test.tscn" id="3_83iqn"]
-[ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/Entites/Monstre.tscn" id="4_vyed2"]
+[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/Entites/MonstreFixe.tscn" id="4_7x05o"]
+[ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/Entites/MonstreMouvement.tscn" id="4_vyed2"]
 
 [node name="Game" type="Node2D"]
 
@@ -36,8 +37,11 @@ position = Vector2(810, 102)
 
 [node name="ennemies" type="Node" parent="."]
 
-[node name="CharacterBody2D" parent="ennemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("4_vyed2")]
-position = Vector2(365, 234)
+[node name="MonstreFixe" parent="ennemies" instance=ExtResource("4_7x05o")]
+position = Vector2(902, 180)
+
+[node name="CharacterBody2D2" parent="ennemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("4_vyed2")]
+position = Vector2(451, 236)
 position1 = NodePath("../../position ennemie/position1")
 position2 = NodePath("../../position ennemie/position2")
 

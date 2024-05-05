@@ -43,16 +43,6 @@ func _check_bounce(delta):
 func bounce (bounce_velocity = BOUNCE_VELOCITY):
 	velocity.y = bounce_velocity
 
-func _check_hit(delta):
-	pass
 
-
-func stop_moving():
-	self.rigid_body.set_sleeping(true)
-
-func die():
-	stop_moving()
-
-func get_hit():
-	die()
-
+func _on_hitbox_area_entered(area):
+	queue_free()
