@@ -49,7 +49,7 @@ Bottes à double sauts					[]
 
 Menu principale						[X]
 
-écran de game over					[]
+écran de game over					[X]
 
 Interaction du joueur					[]
 

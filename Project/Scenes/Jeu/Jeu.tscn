@@ -7,13 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/Entites/MonstreFixe.tscn" id="4_7x05o"]
 [ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/Entites/MonstreMouvement.tscn" id="4_vyed2"]
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("player", "canvas", "RetryButton", "MainMenuButton", "QuitButton")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("player", "canvas", "RetryButton", "MainMenuButton", "QuitButton", "canvasPause", "ReturnButtonPause", "MainMenuButtonPause", "QuitButtonPause")]
 script = ExtResource("1_qiqi7")
 player = NodePath("Joueur")
 canvas = NodePath("Game over/CanvasModulate")
 RetryButton = NodePath("Game over/Retry")
 MainMenuButton = NodePath("Game over/MainMenu")
 QuitButton = NodePath("Game over/Quit")
+canvasPause = NodePath("Node/Pause")
+ReturnButtonPause = NodePath("Node/Return")
+MainMenuButtonPause = NodePath("Node/PauseMainMenu")
+QuitButtonPause = NodePath("Node/PauseQuit")
 
 [node name="limite" type="Node" parent="."]
 
@@ -99,6 +103,39 @@ offset_right = 596.0
 offset_bottom = 388.0
 text = "Quit"
 
+[node name="Node" type="Node" parent="."]
+
+[node name="Pause" type="CanvasModulate" parent="Node"]
+visible = false
+color = Color(1, 1, 1, 0.623529)
+
+[node name="Return" type="Button" parent="Node"]
+visible = false
+offset_left = 383.0
+offset_top = 139.0
+offset_right = 598.0
+offset_bottom = 212.0
+text = "Return"
+
+[node name="PauseMainMenu" type="Button" parent="Node"]
+visible = false
+offset_left = 382.0
+offset_top = 228.0
+offset_right = 597.0
+offset_bottom = 301.0
+text = "Main menu"
+
+[node name="PauseQuit" type="Button" parent="Node"]
+visible = false
+offset_left = 381.0
+offset_top = 315.0
+offset_right = 596.0
+offset_bottom = 389.0
+text = "Quit"
+
 [connection signal="pressed" from="Game over/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Game over/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Game over/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Node/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Node/PauseMainMenu" to="." method="_on_pause_main_menu_pressed"]
+[connection signal="pressed" from="Node/PauseQuit" to="." method="_on_pause_quit_pressed"]
