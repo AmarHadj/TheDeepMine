@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/Entites/MonstreFixe.tscn" id="4_7x05o"]
 [ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/Entites/MonstreMouvement.tscn" id="4_vyed2"]
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("player", "canvas", "RetryButton", "MainMenuButton", "QuitButton", "canvasPause", "ReturnButtonPause", "MainMenuButtonPause", "QuitButtonPause")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("player", "canvasGameOver", "RetryButton", "MainMenuButton", "QuitButton", "canvasPause", "ReturnButtonPause", "MainMenuButtonPause", "QuitButtonPause")]
 script = ExtResource("1_qiqi7")
 player = NodePath("Joueur")
-canvas = NodePath("Game over/CanvasModulate")
+canvasGameOver = NodePath("Game over/CanvasModulate")
 RetryButton = NodePath("Game over/Retry")
 MainMenuButton = NodePath("Game over/MainMenu")
 QuitButton = NodePath("Game over/Quit")
@@ -104,6 +104,7 @@ offset_bottom = 388.0
 text = "Quit"
 
 [node name="Node" type="Node" parent="."]
+process_mode = 2
 
 [node name="Pause" type="CanvasModulate" parent="Node"]
 visible = false
