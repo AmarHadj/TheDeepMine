@@ -37,7 +37,7 @@ Les mouvements						[X]
 
 Les monstres 						[X]
 
-Le menu pause						[]
+Le menu pause						[X]
 
 Les plateformes fragiles				[]
 
