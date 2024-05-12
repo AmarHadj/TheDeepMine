@@ -41,7 +41,7 @@ collision_mask = 8
 collide_with_areas = true
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_mask = 6
+collision_mask = 22
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_xc2g6")

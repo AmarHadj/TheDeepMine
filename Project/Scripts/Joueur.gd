@@ -40,9 +40,11 @@ func _check_bounce(delta):
 				raycast.get_collider().entity.call_deferred("be_bounced_upon", self)
 				break
 
+
 func bounce (bounce_velocity = BOUNCE_VELOCITY):
 	velocity.y = bounce_velocity
 
 
 func _on_hitbox_area_entered(area):
 	queue_free()
+

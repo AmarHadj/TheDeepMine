@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl4kj0vxmicne"]
+[gd_scene load_steps=8 format=3 uid="uid://cl4kj0vxmicne"]
 
 [ext_resource type="Script" path="res://Scenes/Jeu/Observateur.gd" id="1_qiqi7"]
 [ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/fond.png" id="1_temh8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Plateformes/plateforme_test.tscn" id="3_83iqn"]
 [ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/Entites/MonstreFixe.tscn" id="4_7x05o"]
 [ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/Entites/MonstreMouvement.tscn" id="4_vyed2"]
+[ext_resource type="PackedScene" uid="uid://dgs6tfu445bo6" path="res://Objet/Plateformes/PlateformeFragile.tscn" id="7_4f48a"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("player", "canvasGameOver", "RetryButton", "MainMenuButton", "QuitButton", "canvasPause", "ReturnButtonPause", "MainMenuButtonPause", "QuitButtonPause")]
 script = ExtResource("1_qiqi7")
@@ -49,10 +50,10 @@ position = Vector2(810, 102)
 [node name="ennemies" type="Node" parent="."]
 
 [node name="MonstreFixe" parent="ennemies" instance=ExtResource("4_7x05o")]
-position = Vector2(902, 180)
+position = Vector2(913, 173)
 
 [node name="CharacterBody2D2" parent="ennemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("4_vyed2")]
-position = Vector2(451, 236)
+position = Vector2(456, 389)
 position1 = NodePath("../../position ennemie/position1")
 position2 = NodePath("../../position ennemie/position2")
 
@@ -133,6 +134,9 @@ offset_top = 315.0
 offset_right = 596.0
 offset_bottom = 389.0
 text = "Quit"
+
+[node name="StaticBody2D" parent="." instance=ExtResource("7_4f48a")]
+position = Vector2(631, 322)
 
 [connection signal="pressed" from="Game over/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Game over/MainMenu" to="." method="_on_main_menu_pressed"]
