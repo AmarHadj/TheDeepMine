@@ -15,10 +15,10 @@ canvasGameOver = NodePath("Game over/CanvasModulate")
 RetryButton = NodePath("Game over/Retry")
 MainMenuButton = NodePath("Game over/MainMenu")
 QuitButton = NodePath("Game over/Quit")
-canvasPause = NodePath("Node/Pause")
-ReturnButtonPause = NodePath("Node/Return")
-MainMenuButtonPause = NodePath("Node/PauseMainMenu")
-QuitButtonPause = NodePath("Node/PauseQuit")
+canvasPause = NodePath("Menu/Pause")
+ReturnButtonPause = NodePath("Menu/Return")
+MainMenuButtonPause = NodePath("Menu/PauseMainMenu")
+QuitButtonPause = NodePath("Menu/PauseQuit")
 
 [node name="limite" type="Node" parent="."]
 
@@ -49,15 +49,20 @@ position = Vector2(810, 102)
 
 [node name="ennemies" type="Node" parent="."]
 
-[node name="MonstreFixe" parent="ennemies" instance=ExtResource("4_7x05o")]
+[node name="MonstreFixe" parent="ennemies" node_paths=PackedStringArray("player") instance=ExtResource("4_7x05o")]
 position = Vector2(913, 173)
+player = NodePath("../../Joueur")
 
-[node name="CharacterBody2D2" parent="ennemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("4_vyed2")]
-position = Vector2(456, 389)
+[node name="CharacterBody2D2" parent="ennemies" node_paths=PackedStringArray("position1", "position2", "player") instance=ExtResource("4_vyed2")]
+position = Vector2(468, 236)
 position1 = NodePath("../../position ennemie/position1")
 position2 = NodePath("../../position ennemie/position2")
+player = NodePath("../../Joueur")
 
 [node name="Plateformes" type="Node" parent="."]
+
+[node name="Plteforme Fragile" parent="Plateformes" instance=ExtResource("7_4f48a")]
+position = Vector2(631, 322)
 
 [node name="StaticBody2D" parent="Plateformes" instance=ExtResource("3_83iqn")]
 position = Vector2(-293, 128)
@@ -104,14 +109,14 @@ offset_right = 596.0
 offset_bottom = 388.0
 text = "Quit"
 
-[node name="Node" type="Node" parent="."]
+[node name="Menu" type="Node" parent="."]
 process_mode = 2
 
-[node name="Pause" type="CanvasModulate" parent="Node"]
+[node name="Pause" type="CanvasModulate" parent="Menu"]
 visible = false
 color = Color(1, 1, 1, 0.623529)
 
-[node name="Return" type="Button" parent="Node"]
+[node name="Return" type="Button" parent="Menu"]
 visible = false
 offset_left = 383.0
 offset_top = 139.0
@@ -119,7 +124,7 @@ offset_right = 598.0
 offset_bottom = 212.0
 text = "Return"
 
-[node name="PauseMainMenu" type="Button" parent="Node"]
+[node name="PauseMainMenu" type="Button" parent="Menu"]
 visible = false
 offset_left = 382.0
 offset_top = 228.0
@@ -127,7 +132,7 @@ offset_right = 597.0
 offset_bottom = 301.0
 text = "Main menu"
 
-[node name="PauseQuit" type="Button" parent="Node"]
+[node name="PauseQuit" type="Button" parent="Menu"]
 visible = false
 offset_left = 381.0
 offset_top = 315.0
@@ -135,12 +140,9 @@ offset_right = 596.0
 offset_bottom = 389.0
 text = "Quit"
 
-[node name="StaticBody2D" parent="." instance=ExtResource("7_4f48a")]
-position = Vector2(631, 322)
-
 [connection signal="pressed" from="Game over/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Game over/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Game over/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Node/Return" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="Node/PauseMainMenu" to="." method="_on_pause_main_menu_pressed"]
-[connection signal="pressed" from="Node/PauseQuit" to="." method="_on_pause_quit_pressed"]
+[connection signal="pressed" from="Menu/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Menu/PauseMainMenu" to="." method="_on_pause_main_menu_pressed"]
+[connection signal="pressed" from="Menu/PauseQuit" to="." method="_on_pause_quit_pressed"]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgs6tfu445bo6"]
+[gd_scene load_steps=5 format=3 uid="uid://dgs6tfu445bo6"]
 
 [ext_resource type="Script" path="res://Scripts/PlateformeFragile.gd" id="1_3re3b"]
 [ext_resource type="Texture2D" uid="uid://bg11y8bsn1h8k" path="res://Art/plateforme_test.png" id="1_juona"]
-[ext_resource type="Script" path="res://Scripts/Fragile.gd" id="2_dxis0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sibdi"]
 size = Vector2(216, 32)
@@ -22,8 +21,10 @@ texture = ExtResource("1_juona")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
-script = ExtResource("2_dxis0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_3jq4q")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

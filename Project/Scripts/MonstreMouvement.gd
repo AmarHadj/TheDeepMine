@@ -4,6 +4,7 @@ const SPEED = 200
 
 @export var position1: Node2D
 @export var position2: Node2D
+@export var player: Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @onready var verif1 = position1.global_position.x - 20
 @onready var verif2 = position2.global_position.x + 20
@@ -31,3 +32,6 @@ func be_bounced_upon(bouncer):
 		queue_free()
 
 
+func _on_hitbox_area_entered(area):
+	if area.overlaps_body(player) :
+		player.queue_free()

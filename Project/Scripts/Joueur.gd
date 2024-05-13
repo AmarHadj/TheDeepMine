@@ -45,6 +45,5 @@ func bounce (bounce_velocity = BOUNCE_VELOCITY):
 	velocity.y = bounce_velocity
 
 
-func _on_hitbox_area_entered(area):
-	queue_free()
+
 
