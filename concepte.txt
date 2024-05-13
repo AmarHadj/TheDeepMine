@@ -39,7 +39,7 @@ Les monstres 						[X]
 
 Le menu pause						[X]
 
-Les plateformes fragiles				[]
+Les plateformes fragiles				[X]
 
 La lévitation						[]
 
