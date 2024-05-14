@@ -19,14 +19,14 @@ func _ready():
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if player == null :
+	if !player.visible :
 		makeButtonAppear(canvasGameOver, RetryButton, MainMenuButton, QuitButton, true)
 	
-	if Input.is_action_just_pressed("esc") && isPaused == false && player != null:
+	if Input.is_action_just_pressed("esc") && isPaused == false && player.visible:
 		makeButtonAppear(canvasPause, ReturnButtonPause, QuitButtonPause, MainMenuButtonPause, true)
 		isPaused = true
 		get_tree().paused = true
-	elif Input.is_action_just_pressed("esc") && isPaused == true && player != null:
+	elif Input.is_action_just_pressed("esc") && isPaused == true && player.visible:
 		makeButtonAppear(canvasPause, ReturnButtonPause, QuitButtonPause, MainMenuButtonPause, false)
 		isPaused = false
 		get_tree().paused = false

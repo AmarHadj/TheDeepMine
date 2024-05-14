@@ -34,4 +34,4 @@ func be_bounced_upon(bouncer):
 
 func _on_hitbox_area_entered(area):
 	if area.overlaps_body(player) :
-		player.queue_free()
+		player.visible = false
