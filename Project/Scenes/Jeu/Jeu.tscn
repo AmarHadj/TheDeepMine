@@ -50,7 +50,7 @@ position = Vector2(143, 70)
 [node name="ennemies" type="Node" parent="."]
 
 [node name="MonstreFixe" parent="ennemies" node_paths=PackedStringArray("player") instance=ExtResource("4_7x05o")]
-position = Vector2(913, 173)
+position = Vector2(266, 443)
 player = NodePath("../../Joueur")
 
 [node name="CharacterBody2D2" parent="ennemies" node_paths=PackedStringArray("position1", "position2", "player") instance=ExtResource("4_vyed2")]
@@ -62,7 +62,7 @@ player = NodePath("../../Joueur")
 [node name="Plateformes" type="Node" parent="."]
 
 [node name="Plteforme Fragile" parent="Plateformes" instance=ExtResource("7_4f48a")]
-position = Vector2(449, 360)
+position = Vector2(547, 375)
 
 [node name="StaticBody2D" parent="Plateformes" instance=ExtResource("3_83iqn")]
 position = Vector2(-294, 118)
