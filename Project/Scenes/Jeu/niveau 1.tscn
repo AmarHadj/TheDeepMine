@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl4kj0vxmicne"]
+
+[ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Constructions/plateforme_test.tscn" id="2_h3uc3"]
+[ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/fond.png" id="3_82m4t"]
+[ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Joueur.tscn" id="4_o5s5y"]
+[ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Jeu/finDeNiveau.tscn" id="5_5hg5b"]
+[ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Jeu/Pause.tscn" id="5_8tbt2"]
+
+[node name="Game" type="Node2D"]
+
+[node name="limite" type="Node" parent="."]
+
+[node name="StaticBody2D3" parent="limite" instance=ExtResource("2_h3uc3")]
+visible = false
+position = Vector2(-15, 60)
+rotation = 1.5708
+
+[node name="StaticBody2D2" parent="limite" instance=ExtResource("2_h3uc3")]
+visible = false
+position = Vector2(977, 60)
+rotation = 1.5708
+
+[node name="StaticBody2D4" parent="limite" instance=ExtResource("2_h3uc3")]
+visible = false
+position = Vector2(480, 555)
+
+[node name="StaticBody2D5" parent="limite" instance=ExtResource("2_h3uc3")]
+visible = false
+position = Vector2(480, -17)
+
+[node name="Fond" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("3_82m4t")
+
+[node name="Joueur" parent="." instance=ExtResource("4_o5s5y")]
+position = Vector2(115, 128)
+scale = Vector2(0.955272, 0.974049)
+
+[node name="Plateformes" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Plateformes" instance=ExtResource("2_h3uc3")]
+position = Vector2(-66, 189)
+
+[node name="StaticBody2D2" parent="Plateformes" instance=ExtResource("2_h3uc3")]
+position = Vector2(1014, 303)
+
+[node name="StaticBody2D3" parent="Plateformes" instance=ExtResource("2_h3uc3")]
+position = Vector2(-39, 424)
+
+[node name="StaticBody2D4" parent="Plateformes" instance=ExtResource("2_h3uc3")]
+position = Vector2(480, 523)
+
+[node name="position ennemie" type="Node" parent="."]
+
+[node name="position2" type="Node2D" parent="position ennemie"]
+position = Vector2(581, 281)
+
+[node name="position1" type="Node2D" parent="position ennemie"]
+position = Vector2(757, 281)
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="FinDeNiveau" parent="Menu" instance=ExtResource("5_5hg5b")]
+position = Vector2(960, 503)
+
+[node name="Pause" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("5_8tbt2")]
+position = Vector2(349, 350)
+player = NodePath("../../Joueur")
+
+[node name="ennemies" type="Node" parent="."]
+
+[node name="bonus" type="Node" parent="."]

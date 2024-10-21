@@ -41,17 +41,15 @@ Le menu pause						[X]
 
 Les plateformes fragiles				[X]
 
-La lévitation						[]
+La lévitation						[X]
 
 La pioche						[]
 
-Bottes à double sauts					[]
+Bottes à double sauts					[X]
 
 Menu principale						[X]
 
 écran de game over					[X]
-
-Interaction du joueur					[]
 
 
 

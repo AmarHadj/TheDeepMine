@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="TheDeepMine"
-run/main_scene="res://Scenes/Jeu/Jeu.tscn"
+run/main_scene="res://Scenes/Jeu/niveau 1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Art/icon.svg"
+
+[autoload]
+
+PlayerVar="*res://Scripts/playerVar.gd"
 
 [display]
 
@@ -27,6 +31,16 @@ window/stretch/scale=2.0
 esc={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+Use={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+UsePick={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 

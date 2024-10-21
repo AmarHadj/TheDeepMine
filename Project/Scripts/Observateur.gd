@@ -1,13 +1,13 @@
 extends Node2D
 @export var player: CharacterBody2D
-@export var canvasGameOver: CanvasModulate
-@export var RetryButton: Button
-@export var MainMenuButton: Button
-@export var QuitButton: Button
-@export var canvasPause: CanvasModulate
-@export var ReturnButtonPause: Button
-@export var MainMenuButtonPause: Button
-@export var QuitButtonPause: Button
+@onready var canvasGameOver = $"Game over/GameOver"
+@onready var RetryButton = $"Game over/Retry"
+@onready var MainMenuButton = $"Game over/MainMenu"
+@onready var QuitButton = $"Game over/Quit"
+@onready var canvasPause = $Menu/Pause
+@onready var ReturnButtonPause = $Menu/Return
+@onready var MainMenuButtonPause: = $Menu/PauseMainMenu
+@onready var RetryButtonPause = $Menu/Retry
 
 var isPaused: bool
 
@@ -15,7 +15,7 @@ var isPaused: bool
 func _ready():
 		isPaused = false
 		makeButtonAppear(canvasGameOver, RetryButton, MainMenuButton, QuitButton, false)
-		makeButtonAppear(canvasPause, ReturnButtonPause, QuitButtonPause, MainMenuButtonPause, false)
+		makeButtonAppear(canvasPause, ReturnButtonPause, RetryButtonPause, MainMenuButtonPause, false)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -23,20 +23,22 @@ func _process(delta):
 		makeButtonAppear(canvasGameOver, RetryButton, MainMenuButton, QuitButton, true)
 	
 	if Input.is_action_just_pressed("esc") && isPaused == false && player.visible:
-		makeButtonAppear(canvasPause, ReturnButtonPause, QuitButtonPause, MainMenuButtonPause, true)
+		makeButtonAppear(canvasPause, ReturnButtonPause, RetryButtonPause, MainMenuButtonPause, true)
 		isPaused = true
 		get_tree().paused = true
 	elif Input.is_action_just_pressed("esc") && isPaused == true && player.visible:
-		makeButtonAppear(canvasPause, ReturnButtonPause, QuitButtonPause, MainMenuButtonPause, false)
+		makeButtonAppear(canvasPause, ReturnButtonPause, RetryButtonPause, MainMenuButtonPause, false)
 		isPaused = false
 		get_tree().paused = false
 
 func _on_retry_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Jeu/Jeu.tscn")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/Jeu/niveau " +  str(PlayerVar.level) +  ".tscn")
+		
 
 func _on_return_pressed():
 	get_tree().paused = false
-	makeButtonAppear(canvasPause, ReturnButtonPause, QuitButtonPause, MainMenuButtonPause, false)
+	makeButtonAppear(canvasPause, ReturnButtonPause, RetryButtonPause, MainMenuButtonPause, false)
 
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Jeu/Menu.tscn")

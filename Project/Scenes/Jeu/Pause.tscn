@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcve0ydl22vlc"]
+
+[ext_resource type="Script" path="res://Scripts/Observateur.gd" id="1_0gguf"]
+
+[node name="Pause" type="Node2D"]
+script = ExtResource("1_0gguf")
+
+[node name="Menu" type="Node" parent="."]
+process_mode = 2
+
+[node name="Pause" type="CanvasModulate" parent="Menu"]
+visible = false
+color = Color(1, 1, 1, 0.623529)
+
+[node name="Return" type="Button" parent="Menu"]
+visible = false
+offset_left = 383.0
+offset_top = 139.0
+offset_right = 598.0
+offset_bottom = 212.0
+text = "Return"
+
+[node name="PauseMainMenu" type="Button" parent="Menu"]
+visible = false
+offset_left = 382.0
+offset_top = 308.0
+offset_right = 597.0
+offset_bottom = 381.0
+text = "Main menu"
+
+[node name="Retry" type="Button" parent="Menu"]
+visible = false
+offset_left = 383.0
+offset_top = 224.0
+offset_right = 598.0
+offset_bottom = 297.0
+text = "Retry"
+
+[node name="Game over" type="Node" parent="."]
+
+[node name="GameOver" type="CanvasModulate" parent="Game over"]
+visible = false
+position = Vector2(466, 328)
+color = Color(1, 1, 1, 0.54902)
+
+[node name="Retry" type="Button" parent="Game over"]
+visible = false
+offset_left = 383.0
+offset_top = 139.0
+offset_right = 598.0
+offset_bottom = 212.0
+text = "Retry"
+
+[node name="MainMenu" type="Button" parent="Game over"]
+visible = false
+offset_left = 382.0
+offset_top = 228.0
+offset_right = 597.0
+offset_bottom = 301.0
+text = "Main menu"
+
+[node name="Quit" type="Button" parent="Game over"]
+visible = false
+offset_left = 381.0
+offset_top = 315.0
+offset_right = 596.0
+offset_bottom = 388.0
+text = "Quit"
+
+[connection signal="pressed" from="Menu/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Menu/PauseMainMenu" to="." method="_on_pause_main_menu_pressed"]
+[connection signal="pressed" from="Menu/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Game over/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Game over/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Game over/Quit" to="." method="_on_quit_pressed"]
