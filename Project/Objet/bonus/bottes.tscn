@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ciqo188h1ooom"]
 
-[ext_resource type="Script" path="res://Scripts/bottes.gd" id="1_q3aln"]
+[ext_resource type="Script" path="res://Scripts/Bonus/bottes.gd" id="1_q3aln"]
 [ext_resource type="Texture2D" uid="uid://qfpfx51b4uw0" path="res://Art/bottes.png" id="2_vhsol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0feo3"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ct33vu80uve6o"]
 
-[ext_resource type="Script" path="res://Scripts/mur.gd" id="1_o2sbk"]
+[ext_resource type="Script" path="res://Scripts/Plateformes/mur.gd" id="1_o2sbk"]
 [ext_resource type="Texture2D" uid="uid://bg11y8bsn1h8k" path="res://Art/plateforme_test.png" id="2_hr4wo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0m76"]
@@ -29,3 +29,4 @@ position = Vector2(-2, -2)
 shape = SubResource("RectangleShape2D_7nh5b")
 
 [connection signal="area_entered" from="StaticBody2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="StaticBody2D/Area2D" to="." method="_on_area_2d_area_exited"]

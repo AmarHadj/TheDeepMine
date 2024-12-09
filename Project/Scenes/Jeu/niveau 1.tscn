@@ -32,10 +32,6 @@ position = Vector2(480, -17)
 position = Vector2(480, 270)
 texture = ExtResource("3_82m4t")
 
-[node name="Joueur" parent="." instance=ExtResource("4_o5s5y")]
-position = Vector2(115, 128)
-scale = Vector2(0.955272, 0.974049)
-
 [node name="Plateformes" type="Node" parent="."]
 
 [node name="StaticBody2D" parent="Plateformes" instance=ExtResource("2_h3uc3")]
@@ -64,9 +60,13 @@ position = Vector2(757, 281)
 position = Vector2(960, 503)
 
 [node name="Pause" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("5_8tbt2")]
-position = Vector2(349, 350)
+position = Vector2(-208, -32)
 player = NodePath("../../Joueur")
 
 [node name="ennemies" type="Node" parent="."]
 
 [node name="bonus" type="Node" parent="."]
+
+[node name="Joueur" parent="." instance=ExtResource("4_o5s5y")]
+position = Vector2(21, 155)
+scale = Vector2(0.955272, 0.974049)

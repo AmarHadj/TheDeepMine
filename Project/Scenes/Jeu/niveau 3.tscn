@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu6csg8jupuf1"]
+[gd_scene load_steps=12 format=3 uid="uid://bu6csg8jupuf1"]
 
+[ext_resource type="Script" path="res://Scripts/Niveau/Niveau.gd" id="1_3ofy8"]
 [ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Constructions/plateforme_test.tscn" id="1_fodqe"]
 [ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/fond.png" id="2_uar1b"]
 [ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Joueur.tscn" id="3_bt7xc"]
@@ -9,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://byf8oqqhp3xjg" path="res://Objet/bonus/Pioche.tscn" id="6_ll25c"]
 [ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/MonstreFixe.tscn" id="7_ce22j"]
 [ext_resource type="PackedScene" uid="uid://dgs6tfu445bo6" path="res://Objet/Constructions/PlateformeFragile.tscn" id="8_yvcre"]
+[ext_resource type="PackedScene" uid="uid://0ftw2gt0pncv" path="res://Objet/bonus/CheckPoint.tscn" id="10_yfi71"]
 
 [node name="Niveau3" type="Node2D"]
+script = ExtResource("1_3ofy8")
 
 [node name="Fond" type="Sprite2D" parent="."]
 position = Vector2(480, 270)
@@ -36,22 +39,22 @@ rotation = 1.5708
 visible = false
 position = Vector2(480, -17)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_bt7xc")]
-position = Vector2(57, 49)
+[node name="CheckPoint" parent="." instance=ExtResource("10_yfi71")]
+position = Vector2(742, 128)
 
 [node name="monstres" type="Node" parent="."]
 
-[node name="MonstreFixe" parent="monstres" node_paths=PackedStringArray("player") instance=ExtResource("7_ce22j")]
-position = Vector2(260, 134)
-player = NodePath("../../CharacterBody2D")
+[node name="MonstreFixe" parent="monstres" instance=ExtResource("7_ce22j")]
+position = Vector2(262, 129)
 
-[node name="MonstreFixe2" parent="monstres" node_paths=PackedStringArray("player") instance=ExtResource("7_ce22j")]
-position = Vector2(353, 133)
-player = NodePath("../../CharacterBody2D")
+[node name="MonstreFixe2" parent="monstres" instance=ExtResource("7_ce22j")]
+position = Vector2(336, 129)
 
-[node name="MonstreFixe3" parent="monstres" node_paths=PackedStringArray("player") instance=ExtResource("7_ce22j")]
-position = Vector2(432, 132)
-player = NodePath("../../CharacterBody2D")
+[node name="MonstreFixe4" parent="monstres" instance=ExtResource("7_ce22j")]
+position = Vector2(410, 129)
+
+[node name="MonstreFixe5" parent="monstres" instance=ExtResource("7_ce22j")]
+position = Vector2(484, 129)
 
 [node name="Plateformes" type="Node" parent="."]
 
@@ -70,22 +73,25 @@ position = Vector2(377, 369)
 [node name="StaticBody2D6" parent="Plateformes" instance=ExtResource("8_yvcre")]
 position = Vector2(117, 448)
 
-[node name="Mur" parent="Plateformes" instance=ExtResource("6_goxhp")]
-position = Vector2(555, 307)
-rotation = 1.5708
-scale = Vector2(0.291, 1)
-
 [node name="Menu" type="Node" parent="."]
 
 [node name="FinDeNiveau" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("5_x6f6m")]
 position = Vector2(960, 504)
-player = NodePath("../../CharacterBody2D")
+player = NodePath("../../Joueur")
 
 [node name="Pause" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("4_k52mj")]
 position = Vector2(-45, -52)
-player = NodePath("../../CharacterBody2D")
+player = NodePath("../../Joueur")
 
 [node name="bonus" type="Node" parent="."]
 
 [node name="Pioche" parent="bonus" instance=ExtResource("6_ll25c")]
 position = Vector2(637, 132)
+
+[node name="Mur" parent="." instance=ExtResource("6_goxhp")]
+position = Vector2(555, 254)
+rotation = 1.5708
+scale = Vector2(0.2, 1)
+
+[node name="Joueur" parent="." instance=ExtResource("3_bt7xc")]
+position = Vector2(107, 56)

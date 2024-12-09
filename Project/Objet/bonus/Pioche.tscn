@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://byf8oqqhp3xjg"]
 
-[ext_resource type="Script" path="res://Scripts/Pioche.gd" id="1_p5xnr"]
+[ext_resource type="Script" path="res://Scripts/Bonus/Pioche.gd" id="1_p5xnr"]
 [ext_resource type="Texture2D" uid="uid://cnsobhlwdig8r" path="res://Art/Pioche.png" id="2_qocdm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_johfh"]

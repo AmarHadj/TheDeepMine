@@ -1,21 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3y4a4i0cpygk"]
+[gd_scene load_steps=13 format=3 uid="uid://b3y4a4i0cpygk"]
 
+[ext_resource type="Script" path="res://Scripts/Niveau/Niveau.gd" id="1_q2sgu"]
 [ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Constructions/plateforme_test.tscn" id="1_vl73j"]
 [ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/fond.png" id="2_xstmf"]
+[ext_resource type="PackedScene" uid="uid://0ftw2gt0pncv" path="res://Objet/bonus/CheckPoint.tscn" id="3_752wt"]
 [ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Joueur.tscn" id="3_die4p"]
 [ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Jeu/Pause.tscn" id="4_u2scn"]
 [ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Jeu/finDeNiveau.tscn" id="5_ldpsr"]
 [ext_resource type="PackedScene" uid="uid://ciqo188h1ooom" path="res://Objet/bonus/bottes.tscn" id="6_wpon3"]
-[ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/entite/MonstreMouvement.tscn" id="7_2hdxi"]
 [ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/levier.tscn" id="8_0k6al"]
-[ext_resource type="PackedScene" uid="uid://d4ne85hxng3fu" path="res://Objet/bonus/ailes.tscn" id="9_2s8v2"]
+[ext_resource type="PackedScene" uid="uid://dgs6tfu445bo6" path="res://Objet/Constructions/PlateformeFragile.tscn" id="10_r2qmj"]
 [ext_resource type="PackedScene" uid="uid://ct33vu80uve6o" path="res://Objet/Constructions/mur.tscn" id="10_y8ero"]
+[ext_resource type="PackedScene" uid="uid://soanf34dtq3c" path="res://Objet/bonus/levier 2.tscn" id="11_26737"]
 
 [node name="Niveau4" type="Node2D"]
+script = ExtResource("1_q2sgu")
 
 [node name="limite" type="Node" parent="."]
 
 [node name="StaticBody2D3" parent="limite" instance=ExtResource("1_vl73j")]
+visible = false
 position = Vector2(-15, 60)
 rotation = 1.5708
 
@@ -36,9 +40,8 @@ position = Vector2(480, -17)
 position = Vector2(480, 270)
 texture = ExtResource("2_xstmf")
 
-[node name="Joueur" parent="." instance=ExtResource("3_die4p")]
-position = Vector2(55, 70)
-scale = Vector2(0.955272, 0.974049)
+[node name="CheckPoint" parent="." instance=ExtResource("3_752wt")]
+position = Vector2(862, 203)
 
 [node name="Plateformes" type="Node" parent="."]
 
@@ -64,13 +67,11 @@ position = Vector2(119, 210)
 rotation = 1.5708
 scale = Vector2(0.158633, 1)
 
+[node name="StaticBody2D5" parent="Plateformes" instance=ExtResource("10_r2qmj")]
+position = Vector2(268, 382)
+scale = Vector2(0.4, 1)
+
 [node name="position ennemie" type="Node" parent="."]
-
-[node name="position2" type="Node2D" parent="position ennemie"]
-position = Vector2(150, 377)
-
-[node name="position1" type="Node2D" parent="position ennemie"]
-position = Vector2(344, 377)
 
 [node name="menu" type="Node" parent="."]
 
@@ -87,28 +88,21 @@ player = NodePath("../../Joueur")
 [node name="Levier2" parent="Bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("8_0k6al")]
 position = Vector2(782, 216)
 plateforme = NodePath("../../Plateformes/Mur")
-x = -20.0
-y = 365.0
-
-[node name="Levier" parent="Bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("8_0k6al")]
-position = Vector2(39, 433)
-plateforme = NodePath("../../Plateformes/StaticBody2D4")
-x = 480.0
-y = 523.0
 
 [node name="Bottes2" parent="Bonus" instance=ExtResource("6_wpon3")]
 position = Vector2(628, 200)
 
-[node name="Ailes" parent="Bonus" instance=ExtResource("9_2s8v2")]
-position = Vector2(241, 295)
-
 [node name="Bottes" parent="Bonus" instance=ExtResource("6_wpon3")]
 position = Vector2(206, 82)
 
+[node name="Levier de plateforme" parent="Bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("11_26737")]
+position = Vector2(29, 435)
+plateforme = NodePath("../../Plateformes/StaticBody2D4")
+x = 480.0
+y = 523.0
+
 [node name="ennemie" type="Node" parent="."]
 
-[node name="MonstreMouvement" parent="ennemie" node_paths=PackedStringArray("position1", "position2", "player") instance=ExtResource("7_2hdxi")]
-position = Vector2(239, 377)
-position1 = NodePath("../../position ennemie/position1")
-position2 = NodePath("../../position ennemie/position2")
-player = NodePath("../../Joueur")
+[node name="Joueur" parent="." instance=ExtResource("3_die4p")]
+position = Vector2(21, 82)
+scale = Vector2(0.955272, 0.974049)

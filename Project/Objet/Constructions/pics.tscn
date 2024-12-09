@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://claknm88qq2ar"]
+
+[ext_resource type="Texture2D" uid="uid://cqbl61pxo8jvx" path="res://Art/pics.png" id="1_3dsdu"]
+[ext_resource type="Script" path="res://Scripts/Niveau/pics.gd" id="1_bica8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_884hn"]
+size = Vector2(31, 2)
+
+[node name="Pics" type="Node2D"]
+script = ExtResource("1_bica8")
+
+[node name="Pics" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("1_3dsdu")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0.5, -14)
+shape = SubResource("RectangleShape2D_884hn")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

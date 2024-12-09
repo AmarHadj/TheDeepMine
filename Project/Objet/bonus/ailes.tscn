@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4ne85hxng3fu"]
 
-[ext_resource type="Script" path="res://Scripts/ailes.gd" id="1_ql4qm"]
+[ext_resource type="Script" path="res://Scripts/Bonus/ailes.gd" id="1_icfqb"]
 [ext_resource type="Texture2D" uid="uid://bl3wcxvw3fdaq" path="res://Art/ailes.png" id="2_p6xqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gryls"]
 size = Vector2(39.5, 19.75)
 
 [node name="Ailes" type="Node2D"]
-script = ExtResource("1_ql4qm")
+script = ExtResource("1_icfqb")
 
 [node name="Ailes" type="Sprite2D" parent="."]
 texture = ExtResource("2_p6xqr")

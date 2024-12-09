@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c584bi5h3inla"]
 
-[ext_resource type="Script" path="res://Scripts/bounceArea.gd" id="1_6x7f5"]
+[ext_resource type="Script" path="res://Scripts/Entite/bounceArea.gd" id="1_6x7f5"]
 
 [node name="bounceArea" type="Area2D"]
 collision_layer = 8

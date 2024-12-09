@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://0ftw2gt0pncv"]
+
+[ext_resource type="Texture2D" uid="uid://d24gw8xjer1o5" path="res://Art/Drapeau.png" id="1_7p8ea"]
+[ext_resource type="Script" path="res://Scripts/Bonus/CheckPoint.gd" id="1_jvew4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sf4n"]
+size = Vector2(18.8235, 31.7647)
+
+[node name="CheckPoint" type="Node2D"]
+script = ExtResource("1_jvew4")
+
+[node name="Drapeau" type="Sprite2D" parent="."]
+texture = ExtResource("1_7p8ea")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(9.53674e-07, -3)
+scale = Vector2(1.7, 1.7)
+shape = SubResource("RectangleShape2D_2sf4n")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

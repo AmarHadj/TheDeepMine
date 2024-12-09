@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6fmqbxxmysow"]
+
+[ext_resource type="Texture2D" uid="uid://cqdngke1e4n48" path="res://Art/choix de niveau.png" id="1_chpf6"]
+[ext_resource type="Script" path="res://Scripts/Menu/ChoixDeNiveaux.gd" id="1_r8tig"]
+
+[node name="ChoixDeNiveaux" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r8tig")
+
+[node name="ChoixDeNiveau" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("1_chpf6")
+
+[node name="return" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 467.0
+offset_right = 149.0
+offset_bottom = 523.0
+text = "return
+"
+
+[node name="Node" type="Node" parent="."]
+
+[node name="level 1" type="Button" parent="Node"]
+offset_left = 120.0
+offset_top = 80.0
+offset_right = 200.0
+offset_bottom = 160.0
+text = "1
+"
+
+[node name="level 2" type="Button" parent="Node"]
+offset_left = 280.0
+offset_top = 80.0
+offset_right = 360.0
+offset_bottom = 160.0
+text = "2"
+
+[node name="level 3" type="Button" parent="Node"]
+offset_left = 440.0
+offset_top = 80.0
+offset_right = 520.0
+offset_bottom = 160.0
+text = "3"
+
+[node name="level 4" type="Button" parent="Node"]
+offset_left = 600.0
+offset_top = 80.0
+offset_right = 680.0
+offset_bottom = 160.0
+text = "4"
+
+[node name="level 5" type="Button" parent="Node"]
+offset_left = 760.0
+offset_top = 80.0
+offset_right = 840.0
+offset_bottom = 160.0
+text = "5"
+
+[node name="level 6" type="Button" parent="Node"]
+offset_left = 120.0
+offset_top = 239.0
+offset_right = 200.0
+offset_bottom = 319.0
+text = "6"
+
+[node name="level 7" type="Button" parent="Node"]
+offset_left = 280.0
+offset_top = 240.0
+offset_right = 360.0
+offset_bottom = 320.0
+text = "7"
+
+[node name="level 8" type="Button" parent="Node"]
+offset_left = 440.0
+offset_top = 240.0
+offset_right = 520.0
+offset_bottom = 320.0
+text = "8"
+
+[node name="level 9" type="Button" parent="Node"]
+offset_left = 600.0
+offset_top = 240.0
+offset_right = 680.0
+offset_bottom = 320.0
+text = "9"
+
+[node name="level 10" type="Button" parent="Node"]
+offset_left = 760.0
+offset_top = 240.0
+offset_right = 840.0
+offset_bottom = 320.0
+text = "10"
+
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Node/level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Node/level 2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Node/level 3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Node/level 4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Node/level 5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="Node/level 6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="Node/level 7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="Node/level 8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="Node/level 9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="Node/level 10" to="." method="_on_level_10_pressed"]

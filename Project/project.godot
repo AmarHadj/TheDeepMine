@@ -17,7 +17,7 @@ config/icon="res://Art/icon.svg"
 
 [autoload]
 
-PlayerVar="*res://Scripts/playerVar.gd"
+PlayerVar="*res://Scripts/AutoLoad/playerVar.gd"
 
 [display]
 
