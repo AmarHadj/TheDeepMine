@@ -1,0 +1,173 @@
+[gd_scene load_steps=14 format=3 uid="uid://caxgl4fc4klt2"]
+
+[ext_resource type="Script" path="res://Scripts/Level/Level.gd" id="1_umr2j"]
+[ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Constructions/plateform.tscn" id="2_hoaau"]
+[ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/Background.png" id="3_7mn67"]
+[ext_resource type="PackedScene" uid="uid://0ftw2gt0pncv" path="res://Objet/bonus/CheckPoint.tscn" id="4_7hre3"]
+[ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Game/EndOfLevel.tscn" id="5_2rjrg"]
+[ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="6_ui36q"]
+[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/MonsterIdle.tscn" id="7_1hi0y"]
+[ext_resource type="PackedScene" uid="uid://ciqo188h1ooom" path="res://Objet/bonus/Boots.tscn" id="8_wpasm"]
+[ext_resource type="PackedScene" uid="uid://byf8oqqhp3xjg" path="res://Objet/bonus/Pickaxe.tscn" id="9_otrnj"]
+[ext_resource type="PackedScene" uid="uid://d4ne85hxng3fu" path="res://Objet/bonus/Wings.tscn" id="10_3emiv"]
+[ext_resource type="PackedScene" uid="uid://dgs6tfu445bo6" path="res://Objet/Constructions/FragilePlateform.tscn" id="11_yd55y"]
+[ext_resource type="PackedScene" uid="uid://ct33vu80uve6o" path="res://Objet/Constructions/Wall.tscn" id="12_kfhif"]
+[ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Player.tscn" id="13_40i4m"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_umr2j")
+
+[node name="limite" type="Node" parent="."]
+
+[node name="StaticBody2D3" parent="limite" instance=ExtResource("2_hoaau")]
+visible = false
+position = Vector2(-15, 60)
+rotation = 1.5708
+
+[node name="StaticBody2D2" parent="limite" instance=ExtResource("2_hoaau")]
+visible = false
+position = Vector2(977, 60)
+rotation = 1.5708
+
+[node name="StaticBody2D5" parent="limite" instance=ExtResource("2_hoaau")]
+visible = false
+position = Vector2(480, -17)
+
+[node name="Fond" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("3_7mn67")
+
+[node name="CheckPoint2" parent="." instance=ExtResource("4_7hre3")]
+position = Vector2(361, 69)
+
+[node name="CheckPoint" parent="." instance=ExtResource("4_7hre3")]
+position = Vector2(226, 482)
+
+[node name="position ennemie" type="Node" parent="."]
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="FinDeNiveau" parent="Menu" instance=ExtResource("5_2rjrg")]
+position = Vector2(960, 503)
+
+[node name="Pause" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("6_ui36q")]
+position = Vector2(-208, -32)
+player = NodePath("../../player")
+
+[node name="ennemies" type="Node" parent="."]
+
+[node name="MonstreFixe2" parent="ennemies" instance=ExtResource("7_1hi0y")]
+position = Vector2(519, 122)
+
+[node name="MonstreFixe3" parent="ennemies" instance=ExtResource("7_1hi0y")]
+position = Vector2(574, 166)
+
+[node name="MonstreFixe4" parent="ennemies" instance=ExtResource("7_1hi0y")]
+position = Vector2(519, 209)
+
+[node name="bonus" type="Node" parent="."]
+
+[node name="Bottes2" parent="bonus" instance=ExtResource("8_wpasm")]
+position = Vector2(355, 458)
+
+[node name="Pioche2" parent="bonus" instance=ExtResource("9_otrnj")]
+position = Vector2(363, 402)
+
+[node name="Bottes3" parent="bonus" instance=ExtResource("8_wpasm")]
+position = Vector2(262, 367)
+
+[node name="Pioche3" parent="bonus" instance=ExtResource("9_otrnj")]
+position = Vector2(255, 302)
+
+[node name="Bottes5" parent="bonus" instance=ExtResource("8_wpasm")]
+position = Vector2(359, 281)
+
+[node name="Pioche4" parent="bonus" instance=ExtResource("9_otrnj")]
+position = Vector2(367, 225)
+
+[node name="Bottes4" parent="bonus" instance=ExtResource("8_wpasm")]
+position = Vector2(262, 160)
+
+[node name="Bottes6" parent="bonus" instance=ExtResource("8_wpasm")]
+position = Vector2(262, 133)
+
+[node name="Bottes7" parent="bonus" instance=ExtResource("8_wpasm")]
+position = Vector2(262, 107)
+
+[node name="Pioche5" parent="bonus" instance=ExtResource("9_otrnj")]
+position = Vector2(253, 46)
+
+[node name="Pioche6" parent="bonus" instance=ExtResource("9_otrnj")]
+position = Vector2(430, 343)
+
+[node name="Bottes8" parent="bonus" instance=ExtResource("8_wpasm")]
+position = Vector2(546, 483)
+
+[node name="Bottes9" parent="bonus" instance=ExtResource("8_wpasm")]
+position = Vector2(262, 81)
+
+[node name="Ailes" parent="bonus" instance=ExtResource("10_3emiv")]
+position = Vector2(145, 293)
+
+[node name="Plateformes" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Plateformes" instance=ExtResource("2_hoaau")]
+position = Vector2(-398, 100)
+
+[node name="StaticBody2D4" parent="Plateformes" instance=ExtResource("2_hoaau")]
+position = Vector2(-100, 526)
+
+[node name="StaticBody2D2" parent="Plateformes" instance=ExtResource("11_yd55y")]
+position = Vector2(443, 310)
+scale = Vector2(0.3, 1)
+
+[node name="StaticBody2D5" parent="Plateformes" instance=ExtResource("2_hoaau")]
+position = Vector2(359, 495)
+scale = Vector2(0.05, 1)
+
+[node name="StaticBody2D6" parent="Plateformes" instance=ExtResource("2_hoaau")]
+position = Vector2(258, 405)
+scale = Vector2(0.07, 1)
+
+[node name="StaticBody2D7" parent="Plateformes" instance=ExtResource("2_hoaau")]
+position = Vector2(262, 226)
+scale = Vector2(0.07, 1)
+
+[node name="StaticBody2D8" parent="Plateformes" instance=ExtResource("2_hoaau")]
+position = Vector2(363, 318)
+scale = Vector2(0.05, 1)
+
+[node name="StaticBody2D9" parent="Plateformes" instance=ExtResource("2_hoaau")]
+position = Vector2(357, 113)
+scale = Vector2(0.05, 1)
+
+[node name="StaticBody2D10" parent="Plateformes" instance=ExtResource("2_hoaau")]
+position = Vector2(547, 511)
+scale = Vector2(0.1, 1)
+
+[node name="StaticBody2D11" parent="Plateformes" instance=ExtResource("2_hoaau")]
+position = Vector2(1276, 523)
+
+[node name="fond" parent="Plateformes" instance=ExtResource("2_hoaau")]
+position = Vector2(626, 847)
+scale = Vector2(3, 1)
+
+[node name="Mur" parent="Plateformes" instance=ExtResource("12_kfhif")]
+position = Vector2(64, 569)
+rotation = 1.5708
+
+[node name="Mur2" parent="Plateformes" instance=ExtResource("12_kfhif")]
+position = Vector2(220, -56)
+rotation = 1.5708
+
+[node name="Mur5" parent="Plateformes" instance=ExtResource("12_kfhif")]
+position = Vector2(394, 580)
+rotation = 1.5708
+
+[node name="StaticBody2D3" parent="Plateformes" instance=ExtResource("11_yd55y")]
+position = Vector2(144, 178)
+scale = Vector2(0.3, 1)
+
+[node name="player" parent="." instance=ExtResource("13_40i4m")]
+position = Vector2(21, 66)
+scale = Vector2(0.955272, 0.974049)

@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://ossu14s46i56"]
+
+[ext_resource type="Texture2D" uid="uid://dkxqih3xtsdf7" path="res://Art/Monster.png" id="1_6cvml"]
+[ext_resource type="Script" path="res://Scripts/Entite/MonsterMouvement.gd" id="1_bo004"]
+[ext_resource type="PackedScene" uid="uid://c584bi5h3inla" path="res://Objet/entite/bounce_area.tscn" id="2_v1waa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6b2d6"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ki7r0"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwvhx"]
+size = Vector2(34, 3)
+
+[node name="MonstreMouvement" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_bo004")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_6b2d6")
+
+[node name="Monstre" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("1_6cvml")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ki7r0")
+
+[node name="bounceArea" parent="." instance=ExtResource("2_v1waa")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounceArea"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_xwvhx")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://xww2ni8qwqd2"]
+
+[ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Constructions/plateform.tscn" id="1_pup42"]
+[ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/Background.png" id="2_rptf0"]
+[ext_resource type="PackedScene" uid="uid://0ftw2gt0pncv" path="res://Objet/bonus/CheckPoint.tscn" id="3_0sta7"]
+[ext_resource type="PackedScene" uid="uid://ct33vu80uve6o" path="res://Objet/Constructions/Wall.tscn" id="5_8bg82"]
+[ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Player.tscn" id="13_ddsxf"]
+
+[node name="NiveauDeTest" type="Node2D"]
+
+[node name="limite" type="Node" parent="."]
+
+[node name="StaticBody2D3" parent="limite" instance=ExtResource("1_pup42")]
+visible = false
+position = Vector2(-15, 60)
+rotation = 1.5708
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D2" parent="limite" instance=ExtResource("1_pup42")]
+visible = false
+position = Vector2(977, 60)
+rotation = 1.5708
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D4" parent="limite" instance=ExtResource("1_pup42")]
+visible = false
+position = Vector2(480, 798)
+
+[node name="StaticBody2D5" parent="limite" instance=ExtResource("1_pup42")]
+visible = false
+position = Vector2(480, -17)
+
+[node name="Fond" type="Sprite2D" parent="."]
+position = Vector2(481, 270)
+texture = ExtResource("2_rptf0")
+
+[node name="CheckPoint" parent="." instance=ExtResource("3_0sta7")]
+position = Vector2(224, 47)
+
+[node name="CheckPoint2" parent="." instance=ExtResource("3_0sta7")]
+position = Vector2(81, 47)
+
+[node name="Plateformes" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Plateformes" instance=ExtResource("1_pup42")]
+position = Vector2(360, 92)
+
+[node name="porte 2" parent="Plateformes" instance=ExtResource("1_pup42")]
+position = Vector2(485, 460)
+scale = Vector2(0.2, 1)
+
+[node name="StaticBody2D4" parent="Plateformes" instance=ExtResource("1_pup42")]
+position = Vector2(1305, 181)
+
+[node name="Mur" parent="Plateformes" instance=ExtResource("5_8bg82")]
+position = Vector2(372, 493)
+rotation = 1.5708
+scale = Vector2(0.1, 1)
+
+[node name="Mur2" parent="Plateformes" instance=ExtResource("5_8bg82")]
+position = Vector2(582, 493)
+rotation = 1.5708
+scale = Vector2(0.1, 1)
+
+[node name="Joueur" parent="." instance=ExtResource("13_ddsxf")]
+position = Vector2(27, 45)
+scale = Vector2(0.955272, 0.974049)

@@ -1,0 +1,161 @@
+[gd_scene load_steps=16 format=3 uid="uid://lsu4ehjkbdlg"]
+
+[ext_resource type="Script" path="res://Scripts/Level/Level.gd" id="1_682rr"]
+[ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Constructions/plateform.tscn" id="2_q65wl"]
+[ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/Background.png" id="3_m7kk4"]
+[ext_resource type="PackedScene" uid="uid://0ftw2gt0pncv" path="res://Objet/bonus/CheckPoint.tscn" id="4_8jcl3"]
+[ext_resource type="PackedScene" uid="uid://dgs6tfu445bo6" path="res://Objet/Constructions/FragilePlateform.tscn" id="5_tluqq"]
+[ext_resource type="PackedScene" uid="uid://claknm88qq2ar" path="res://Objet/Constructions/Spike.tscn" id="6_282st"]
+[ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Game/EndOfLevel.tscn" id="7_nu5jc"]
+[ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="8_7twmm"]
+[ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/entite/MonsterMouvement.tscn" id="9_i8pqo"]
+[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/MonsterIdle.tscn" id="10_10jte"]
+[ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/Lever.tscn" id="11_8k3x5"]
+[ext_resource type="PackedScene" uid="uid://ciqo188h1ooom" path="res://Objet/bonus/Boots.tscn" id="12_618ag"]
+[ext_resource type="PackedScene" uid="uid://soanf34dtq3c" path="res://Objet/bonus/Lever 2.tscn" id="13_7dddu"]
+[ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Player.tscn" id="14_e0k04"]
+[ext_resource type="PackedScene" uid="uid://d4ne85hxng3fu" path="res://Objet/bonus/Wings.tscn" id="15_jb0cf"]
+
+[node name="Niveau5" type="Node2D"]
+script = ExtResource("1_682rr")
+
+[node name="limite" type="Node" parent="."]
+
+[node name="StaticBody2D3" parent="limite" instance=ExtResource("2_q65wl")]
+visible = false
+position = Vector2(-15, 60)
+rotation = 1.5708
+
+[node name="StaticBody2D2" parent="limite" instance=ExtResource("2_q65wl")]
+visible = false
+position = Vector2(977, 60)
+rotation = 1.5708
+
+[node name="StaticBody2D4" parent="limite" instance=ExtResource("2_q65wl")]
+position = Vector2(480, 708)
+
+[node name="StaticBody2D5" parent="limite" instance=ExtResource("2_q65wl")]
+visible = false
+position = Vector2(480, -17)
+
+[node name="Fond" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("3_m7kk4")
+
+[node name="CheckPoint" parent="." instance=ExtResource("4_8jcl3")]
+position = Vector2(929, 201)
+
+[node name="Plateformes" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Plateformes" instance=ExtResource("2_q65wl")]
+position = Vector2(-350, 102)
+
+[node name="StaticBody2D2" parent="Plateformes" instance=ExtResource("2_q65wl")]
+position = Vector2(1234, 245)
+
+[node name="StaticBody2D3" parent="Plateformes" instance=ExtResource("2_q65wl")]
+position = Vector2(-345, 458)
+
+[node name="StaticBody2D4" parent="Plateformes" instance=ExtResource("2_q65wl")]
+position = Vector2(1440, 523)
+
+[node name="StaticBody2D5" parent="Plateformes" instance=ExtResource("5_tluqq")]
+position = Vector2(626, 296)
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D6" parent="Plateformes" instance=ExtResource("5_tluqq")]
+position = Vector2(261, 392)
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D7" parent="Plateformes" instance=ExtResource("2_q65wl")]
+position = Vector2(-345, 263)
+
+[node name="porte" parent="Plateformes" instance=ExtResource("2_q65wl")]
+position = Vector2(120, 374)
+rotation = 1.5708
+scale = Vector2(0.2, 1)
+
+[node name="pics" type="Node" parent="Plateformes"]
+
+[node name="Pics" parent="Plateformes/pics" instance=ExtResource("6_282st")]
+position = Vector2(119, 231)
+
+[node name="Pics2" parent="Plateformes/pics" instance=ExtResource("6_282st")]
+position = Vector2(87, 231)
+
+[node name="Pics3" parent="Plateformes/pics" instance=ExtResource("6_282st")]
+position = Vector2(55, 231)
+
+[node name="Pics4" parent="Plateformes/pics" instance=ExtResource("6_282st")]
+position = Vector2(23, 231)
+
+[node name="Pics5" parent="Plateformes/pics" instance=ExtResource("6_282st")]
+position = Vector2(-9, 231)
+
+[node name="Pics6" parent="Plateformes/pics" instance=ExtResource("6_282st")]
+position = Vector2(-41, 231)
+
+[node name="position ennemie" type="Node" parent="."]
+
+[node name="position2" type="Node2D" parent="position ennemie"]
+position = Vector2(340, 350)
+
+[node name="position1" type="Node2D" parent="position ennemie"]
+position = Vector2(544, 350)
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="FinDeNiveau" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("7_nu5jc")]
+position = Vector2(960, 503)
+player = NodePath("../../player")
+
+[node name="Pause" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("8_7twmm")]
+position = Vector2(-111, 273)
+player = NodePath("../../player")
+
+[node name="ennemies" type="Node" parent="."]
+
+[node name="MonstreMouvement" parent="ennemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("9_i8pqo")]
+position = Vector2(445, 350)
+position1 = NodePath("../../position ennemie/position1")
+position2 = NodePath("../../position ennemie/position2")
+
+[node name="MonstreFixe2" parent="ennemies" instance=ExtResource("10_10jte")]
+position = Vector2(401, 131)
+
+[node name="MonstreFixe3" parent="ennemies" instance=ExtResource("10_10jte")]
+position = Vector2(248, 131)
+
+[node name="MonstreFixe5" parent="ennemies" instance=ExtResource("10_10jte")]
+position = Vector2(554, 131)
+
+[node name="MonstreFixe6" parent="ennemies" instance=ExtResource("10_10jte")]
+position = Vector2(707, 131)
+
+[node name="bonus" type="Node" parent="."]
+
+[node name="Levier2" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("11_8k3x5")]
+position = Vector2(895, 216)
+plateforme = NodePath("../../Plateformes/porte")
+
+[node name="Bottes3" parent="bonus" instance=ExtResource("12_618ag")]
+position = Vector2(324, 95)
+
+[node name="levier a plateforme" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("13_7dddu")]
+position = Vector2(34, 431)
+plateforme = NodePath("../../Plateformes/StaticBody2D4")
+x = 480.0
+y = 523.0
+
+[node name="Bottes4" parent="bonus" instance=ExtResource("12_618ag")]
+position = Vector2(630, 95)
+
+[node name="Bottes5" parent="bonus" instance=ExtResource("12_618ag")]
+position = Vector2(477, 95)
+
+[node name="player" parent="." instance=ExtResource("14_e0k04")]
+position = Vector2(20, 67)
+scale = Vector2(0.955272, 0.974049)
+
+[node name="Ailes" parent="." instance=ExtResource("15_jb0cf")]
+position = Vector2(825, 203)
