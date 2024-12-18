@@ -16,32 +16,32 @@
 [ext_resource type="PackedScene" uid="uid://d4ne85hxng3fu" path="res://Objet/bonus/Wings.tscn" id="14_c71cx"]
 [ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Player.tscn" id="15_myv5t"]
 
-[node name="Niveau7" type="Node2D"]
+[node name="Level10" type="Node2D"]
 script = ExtResource("1_py4wx")
 
-[node name="limite" type="Node" parent="."]
+[node name="Limit" type="Node" parent="."]
 
-[node name="StaticBody2D3" parent="limite" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D3" parent="Limit" instance=ExtResource("2_asygr")]
 visible = false
 position = Vector2(-15, 60)
 rotation = 1.5708
 scale = Vector2(2, 1)
 
-[node name="StaticBody2D2" parent="limite" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D2" parent="Limit" instance=ExtResource("2_asygr")]
 visible = false
 position = Vector2(977, 60)
 rotation = 1.5708
 scale = Vector2(2, 1)
 
-[node name="StaticBody2D4" parent="limite" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D4" parent="Limit" instance=ExtResource("2_asygr")]
 visible = false
 position = Vector2(480, 798)
 
-[node name="StaticBody2D5" parent="limite" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D5" parent="Limit" instance=ExtResource("2_asygr")]
 visible = false
 position = Vector2(480, -17)
 
-[node name="Fond" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(481, 270)
 texture = ExtResource("3_a6tib")
 
@@ -57,175 +57,168 @@ position = Vector2(504, 34)
 [node name="CheckPoint3" parent="." instance=ExtResource("4_7m4rl")]
 position = Vector2(331, 187)
 
-[node name="plateformes" type="Node" parent="."]
+[node name="Platforms" type="Node" parent="."]
 
-[node name="StaticBody2D3" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(-425, 83)
 
-[node name="StaticBody2D4" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D4" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(160, 145)
 scale = Vector2(1, 0.4)
 
-[node name="StaticBody2D5" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D5" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(1313, 145)
 scale = Vector2(1, 0.4)
 
-[node name="StaticBody2D6" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D6" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(454, 223)
 scale = Vector2(0.5, 0.5)
 
-[node name="StaticBody2D7" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D7" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(319, 360)
 scale = Vector2(1, 0.5)
 
-[node name="StaticBody2D8" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D8" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(586, 566)
 rotation = 1.5708
 scale = Vector2(0.1, 1)
 
-[node name="StaticBody2D9" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D9" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(373, 566)
 rotation = 1.5708
 scale = Vector2(0.1, 1)
 
-[node name="StaticBody2D10" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D10" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(-92, 533)
 
-[node name="StaticBody2D" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(1397, 377)
 
-[node name="StaticBody2D2" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(1049, 533)
 
-[node name="StaticBody2D11" parent="plateformes" instance=ExtResource("5_re3lh")]
+[node name="StaticBody2D11" parent="Platforms" instance=ExtResource("5_re3lh")]
 position = Vector2(151, 97)
 scale = Vector2(0.4, 0.5)
 
-[node name="StaticBody2D15" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D15" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(503, 70)
 scale = Vector2(0.1, 0.5)
 
-[node name="StaticBody2D17" parent="plateformes" instance=ExtResource("5_re3lh")]
+[node name="StaticBody2D17" parent="Platforms" instance=ExtResource("5_re3lh")]
 position = Vector2(732, 144)
 scale = Vector2(0.7, 0.5)
 
-[node name="StaticBody2D12" parent="plateformes" instance=ExtResource("5_re3lh")]
+[node name="StaticBody2D12" parent="Platforms" instance=ExtResource("5_re3lh")]
 position = Vector2(270, 319)
 scale = Vector2(0.4, 0.5)
 
-[node name="StaticBody2D13" parent="plateformes" instance=ExtResource("5_re3lh")]
+[node name="StaticBody2D13" parent="Platforms" instance=ExtResource("5_re3lh")]
 position = Vector2(613, 319)
 scale = Vector2(0.4, 0.5)
 
-[node name="portes" type="Node" parent="plateformes"]
+[node name="Doors" type="Node" parent="Platforms"]
 
-[node name="porte2" parent="plateformes/portes" instance=ExtResource("2_asygr")]
+[node name="Door2" parent="Platforms/Doors" instance=ExtResource("2_asygr")]
 position = Vector2(687, 280)
 rotation = 1.5708
 scale = Vector2(0.1, 0.5)
 
-[node name="porte" parent="plateformes/portes" instance=ExtResource("2_asygr")]
+[node name="Door" parent="Platforms/Doors" instance=ExtResource("2_asygr")]
 position = Vector2(619, 188)
 rotation = 1.5708
 scale = Vector2(0.08, 0.5)
 
-[node name="porte final" parent="plateformes/portes" instance=ExtResource("2_asygr")]
+[node name="FinalDoor" parent="Platforms/Doors" instance=ExtResource("2_asygr")]
 position = Vector2(478, 531)
 scale = Vector2(0.2, 0.3)
 
-[node name="Pics2" parent="plateformes/portes/porte final" instance=ExtResource("6_brijs")]
+[node name="Pics2" parent="Platforms/Doors/FinalDoor" instance=ExtResource("6_brijs")]
 position = Vector2(-440, -16.6666)
 scale = Vector2(4, 1)
 
-[node name="Pics3" parent="plateformes/portes/porte final" instance=ExtResource("6_brijs")]
+[node name="Pics3" parent="Platforms/Doors/FinalDoor" instance=ExtResource("6_brijs")]
 position = Vector2(-315, -16.6666)
 scale = Vector2(4, 1)
 
-[node name="Pics4" parent="plateformes/portes/porte final" instance=ExtResource("6_brijs")]
+[node name="Pics4" parent="Platforms/Doors/FinalDoor" instance=ExtResource("6_brijs")]
 position = Vector2(-190, -16.6666)
 scale = Vector2(4, 1)
 
-[node name="Pics5" parent="plateformes/portes/porte final" instance=ExtResource("6_brijs")]
+[node name="Pics5" parent="Platforms/Doors/FinalDoor" instance=ExtResource("6_brijs")]
 position = Vector2(-64.9999, -16.6666)
 scale = Vector2(4, 1)
 
-[node name="Pics6" parent="plateformes/portes/porte final" instance=ExtResource("6_brijs")]
+[node name="Pics6" parent="Platforms/Doors/FinalDoor" instance=ExtResource("6_brijs")]
 position = Vector2(59.9999, -16.6666)
 scale = Vector2(4, 1)
 
-[node name="Pics7" parent="plateformes/portes/porte final" instance=ExtResource("6_brijs")]
+[node name="Pics7" parent="Platforms/Doors/FinalDoor" instance=ExtResource("6_brijs")]
 position = Vector2(185, -16.6666)
 scale = Vector2(4, 1)
 
-[node name="Pics8" parent="plateformes/portes/porte final" instance=ExtResource("6_brijs")]
+[node name="Pics8" parent="Platforms/Doors/FinalDoor" instance=ExtResource("6_brijs")]
 position = Vector2(310, -16.6666)
 scale = Vector2(4, 1)
 
-[node name="Pics9" parent="plateformes/portes/porte final" instance=ExtResource("6_brijs")]
+[node name="Pics9" parent="Platforms/Doors/FinalDoor" instance=ExtResource("6_brijs")]
 position = Vector2(435, -16.6666)
 scale = Vector2(4, 1)
 
-[node name="Pics" parent="plateformes/portes/porte final" instance=ExtResource("6_brijs")]
+[node name="Pics" parent="Platforms/Doors/FinalDoor" instance=ExtResource("6_brijs")]
 position = Vector2(-530, -226.667)
 scale = Vector2(5, 3.33333)
 
-[node name="murs" type="Node" parent="plateformes"]
+[node name="Walls" type="Node" parent="Platforms"]
 
-[node name="Mur" parent="plateformes/murs" instance=ExtResource("7_nvgpr")]
+[node name="Wall" parent="Platforms/Walls" instance=ExtResource("7_nvgpr")]
 position = Vector2(826, 91)
 rotation = 1.5708
 scale = Vector2(0.3, 1)
 
-[node name="Mur2" parent="plateformes/murs" instance=ExtResource("7_nvgpr")]
+[node name="Wall2" parent="Platforms/Walls" instance=ExtResource("7_nvgpr")]
 position = Vector2(858, 91)
 rotation = 1.5708
 scale = Vector2(0.3, 1)
 
-[node name="Mur3" parent="plateformes/murs" instance=ExtResource("7_nvgpr")]
+[node name="Wall3" parent="Platforms/Walls" instance=ExtResource("7_nvgpr")]
 position = Vector2(890, 91)
 rotation = 1.5708
 scale = Vector2(0.3, 1)
 
-[node name="Mur4" parent="plateformes/murs" instance=ExtResource("7_nvgpr")]
+[node name="Wall4" parent="Platforms/Walls" instance=ExtResource("7_nvgpr")]
 position = Vector2(922, 91)
 rotation = 1.5708
 scale = Vector2(0.3, 1)
 
-[node name="Mur5" parent="plateformes/murs" instance=ExtResource("7_nvgpr")]
+[node name="Wall5" parent="Platforms/Walls" instance=ExtResource("7_nvgpr")]
 position = Vector2(954, 91)
 rotation = 1.5708
 scale = Vector2(0.3, 1)
 
-[node name="Mur6" parent="plateformes/murs" instance=ExtResource("7_nvgpr")]
-position = Vector2(986, 91)
-rotation = 1.5708
-scale = Vector2(0.3, 1)
-
-[node name="Mur8" parent="plateformes/murs" instance=ExtResource("7_nvgpr")]
+[node name="walls" parent="Platforms" instance=ExtResource("7_nvgpr")]
 position = Vector2(45, 249)
 rotation = 1.5708
 scale = Vector2(0.23, 1)
 
-[node name="Mur9" parent="plateformes/murs" instance=ExtResource("7_nvgpr")]
+[node name="walls2" parent="Platforms" instance=ExtResource("7_nvgpr")]
 position = Vector2(14, 249)
 rotation = 1.5708
 scale = Vector2(0.23, 1)
 
-[node name="StaticBody2D16" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D16" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(876, 478)
 scale = Vector2(0.1, 1)
 
-[node name="StaticBody2D14" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D14" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(-92, 501)
 
-[node name="StaticBody2D18" parent="plateformes" instance=ExtResource("2_asygr")]
+[node name="StaticBody2D18" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(-92, 479)
-
-[node name="position ennemie" type="Node" parent="."]
 
 [node name="Menu" type="Node" parent="."]
 
-[node name="FinDeNiveau" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("8_pctt3")]
+[node name="EndLevel" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("8_pctt3")]
 position = Vector2(398, 541)
 rotation = 1.5708
 scale = Vector2(1, 1.21)
@@ -235,244 +228,244 @@ player = NodePath("../../player")
 position = Vector2(-72, 355)
 player = NodePath("../../player")
 
-[node name="ennemies" type="Node" parent="."]
+[node name="enemies" type="Node" parent="."]
 
-[node name="MonstreFixe" parent="ennemies" instance=ExtResource("10_opc55")]
+[node name="FixedMonster" parent="enemies" instance=ExtResource("10_opc55")]
 position = Vector2(319, 94)
 
-[node name="MonstreFixe2" parent="ennemies" instance=ExtResource("10_opc55")]
+[node name="FixedMonster2" parent="enemies" instance=ExtResource("10_opc55")]
 position = Vector2(447, 310)
 
-[node name="MonstreFixe3" parent="ennemies" instance=ExtResource("10_opc55")]
+[node name="FixedMonster3" parent="enemies" instance=ExtResource("10_opc55")]
 position = Vector2(756, 497)
 
-[node name="pics" type="Node" parent="."]
+[node name="spikes" type="Node" parent="."]
 
-[node name="pics 1" type="Node" parent="pics"]
+[node name="spikes 1" type="Node" parent="spikes"]
 
-[node name="Pics" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(48, 129)
 
-[node name="Pics2" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike2" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(80, 129)
 
-[node name="Pics3" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike3" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(112, 129)
 
-[node name="Pics4" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike4" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(144, 129)
 
-[node name="Pics5" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike5" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(176, 129)
 
-[node name="Pics6" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike6" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(208, 129)
 
-[node name="Pics7" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike7" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(240, 129)
 
-[node name="Pics8" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike8" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(272, 129)
 
-[node name="Pics9" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike9" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(304, 129)
 
-[node name="Pics10" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike10" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(336, 129)
 
-[node name="Pics11" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike11" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(368, 129)
 
-[node name="Pics12" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike12" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(16, 129)
 
-[node name="Pics16" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike16" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(400, 129)
 
-[node name="Pics17" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike17" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(432, 129)
 
-[node name="Pics18" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike18" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(464, 129)
 
-[node name="Pics19" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike19" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(496, 129)
 
-[node name="Pics20" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike20" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(528, 129)
 
-[node name="Pics21" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike21" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(560, 129)
 
-[node name="Pics22" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike22" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(592, 129)
 
-[node name="Pics23" parent="pics/pics 1" instance=ExtResource("6_brijs")]
+[node name="Spike23" parent="spikes/spikes 1" instance=ExtResource("6_brijs")]
 position = Vector2(624, 129)
 
-[node name="pics 2" type="Node" parent="pics"]
+[node name="spikes 2" type="Node" parent="spikes"]
 
-[node name="Pics2" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike2" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(79, 346)
 
-[node name="Pics3" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike3" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(111, 346)
 
-[node name="Pics4" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike4" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(143, 346)
 
-[node name="Pics5" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike5" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(175, 346)
 
-[node name="Pics6" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike6" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(207, 346)
 
-[node name="Pics7" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike7" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(239, 346)
 
-[node name="Pics8" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike8" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(271, 346)
 
-[node name="Pics9" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike9" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(303, 346)
 
-[node name="Pics10" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike10" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(335, 346)
 
-[node name="Pics11" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike11" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(367, 346)
 
-[node name="Pics16" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike16" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(399, 346)
 
-[node name="Pics17" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike17" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(431, 346)
 
-[node name="Pics18" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike18" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(463, 346)
 
-[node name="Pics19" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike19" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(495, 346)
 
-[node name="Pics20" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike20" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(527, 346)
 
-[node name="Pics21" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike21" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(559, 346)
 
-[node name="Pics22" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike22" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(591, 346)
 
-[node name="Pics23" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike23" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(623, 346)
 
-[node name="Pics24" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike24" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(655, 346)
 
-[node name="Pics25" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike25" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(687, 346)
 
-[node name="Pics26" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike26" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(719, 346)
 
-[node name="Pics27" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike27" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(751, 346)
 
-[node name="Pics28" parent="pics/pics 2" instance=ExtResource("6_brijs")]
+[node name="Spike28" parent="spikes/spikes 2" instance=ExtResource("6_brijs")]
 position = Vector2(783, 346)
 
-[node name="pics 3" type="Node" parent="pics"]
+[node name="spikes 3" type="Node" parent="spikes"]
 
-[node name="Pics2" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike2" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(625, 530)
 
-[node name="Pics3" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike3" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(657, 530)
 
-[node name="Pics4" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike4" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(689, 530)
 
-[node name="Pics5" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike5" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(721, 530)
 
-[node name="Pics6" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike6" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(753, 530)
 
-[node name="Pics7" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike7" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(785, 530)
 
-[node name="Pics8" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike8" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(817, 530)
 
-[node name="Pics9" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike9" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(849, 530)
 
-[node name="Pics10" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike10" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(881, 530)
 
-[node name="Pics11" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike11" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(913, 530)
 
-[node name="Pics16" parent="pics/pics 3" instance=ExtResource("6_brijs")]
+[node name="Spike16" parent="spikes/spikes 3" instance=ExtResource("6_brijs")]
 position = Vector2(945, 530)
 
 [node name="bonus" type="Node" parent="."]
 
-[node name="Bottes3" parent="bonus" instance=ExtResource("11_f4pdh")]
+[node name="Boots3" parent="bonus" instance=ExtResource("11_f4pdh")]
 position = Vector2(380, 52)
 
-[node name="Levier" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("12_svye2")]
+[node name="Lever" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("12_svye2")]
 position = Vector2(807, 195)
 rotation = -1.5708
-plateforme = NodePath("../../plateformes/portes/porte")
+plateforme = NodePath("../../Platforms/Doors/Door")
 
-[node name="Pioche" parent="bonus" instance=ExtResource("13_6irfb")]
+[node name="Pickaxe" parent="bonus" instance=ExtResource("13_6irfb")]
 position = Vector2(798, 170)
 
-[node name="Ailes" parent="bonus" instance=ExtResource("14_c71cx")]
+[node name="Wings" parent="bonus" instance=ExtResource("14_c71cx")]
 position = Vector2(579, 27)
 
-[node name="Pioche2" parent="bonus" instance=ExtResource("13_6irfb")]
+[node name="Pickaxe2" parent="bonus" instance=ExtResource("13_6irfb")]
 position = Vector2(81, 240)
 
-[node name="Bottes" parent="bonus" instance=ExtResource("11_f4pdh")]
+[node name="Boots" parent="bonus" instance=ExtResource("11_f4pdh")]
 position = Vector2(156, 189)
 
-[node name="Bottes2" parent="bonus" instance=ExtResource("11_f4pdh")]
+[node name="Boots2" parent="bonus" instance=ExtResource("11_f4pdh")]
 position = Vector2(156, 285)
 
-[node name="Bottes4" parent="bonus" instance=ExtResource("11_f4pdh")]
+[node name="Boots4" parent="bonus" instance=ExtResource("11_f4pdh")]
 position = Vector2(363, 291)
 
-[node name="Bottes7" parent="bonus" instance=ExtResource("11_f4pdh")]
+[node name="Boots7" parent="bonus" instance=ExtResource("11_f4pdh")]
 position = Vector2(527, 291)
 
-[node name="Ailes2" parent="bonus" instance=ExtResource("14_c71cx")]
+[node name="Wings2" parent="bonus" instance=ExtResource("14_c71cx")]
 position = Vector2(614, 263)
 
-[node name="Bottes5" parent="bonus" instance=ExtResource("11_f4pdh")]
+[node name="Boots5" parent="bonus" instance=ExtResource("11_f4pdh")]
 position = Vector2(613, 296)
 
-[node name="Levier2" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("12_svye2")]
+[node name="Lever2" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("12_svye2")]
 position = Vector2(67, 265)
 rotation = 1.5708
-plateforme = NodePath("../../plateformes/portes/porte2")
+plateforme = NodePath("../../Platforms/Doors/Door2")
 
-[node name="Bottes6" parent="bonus" instance=ExtResource("11_f4pdh")]
+[node name="Boots6" parent="bonus" instance=ExtResource("11_f4pdh")]
 position = Vector2(648, 489)
 
-[node name="Bottes8" parent="bonus" instance=ExtResource("11_f4pdh")]
+[node name="Boots8" parent="bonus" instance=ExtResource("11_f4pdh")]
 position = Vector2(603, 462)
 
-[node name="Bottes9" parent="bonus" instance=ExtResource("11_f4pdh")]
+[node name="Boots9" parent="bonus" instance=ExtResource("11_f4pdh")]
 position = Vector2(558, 433)
 
-[node name="Ailes3" parent="bonus" instance=ExtResource("14_c71cx")]
+[node name="Wings3" parent="bonus" instance=ExtResource("14_c71cx")]
 position = Vector2(496, 390)
 
-[node name="Levier3" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("12_svye2")]
+[node name="Lever3" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("12_svye2")]
 position = Vector2(60, 458)
-plateforme = NodePath("../../plateformes/portes/porte final")
+plateforme = NodePath("../../Platforms/Doors/FinalDoor")
 
 [node name="player" parent="." instance=ExtResource("15_myv5t")]
 position = Vector2(22, 48)

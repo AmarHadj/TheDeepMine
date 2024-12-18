@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ossu14s46i56"]
 
 [ext_resource type="Texture2D" uid="uid://dkxqih3xtsdf7" path="res://Art/Monster.png" id="1_6cvml"]
-[ext_resource type="Script" path="res://Scripts/Entite/MonsterMouvement.gd" id="1_bo004"]
+[ext_resource type="Script" path="res://Scripts/Entite/MovingMonster.gd" id="1_bo004"]
 [ext_resource type="PackedScene" uid="uid://c584bi5h3inla" path="res://Objet/entite/bounce_area.tscn" id="2_v1waa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b2d6"]

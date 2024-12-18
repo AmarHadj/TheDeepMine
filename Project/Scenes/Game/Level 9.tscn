@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/Background.png" id="3_4o74y"]
 [ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Game/EndOfLevel.tscn" id="4_h6q72"]
 [ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="5_hc4je"]
-[ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/entite/MonsterMouvement.tscn" id="6_d6gd5"]
+[ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/entite/MovingMonster.tscn" id="6_d6gd5"]
 [ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/MonsterIdle.tscn" id="7_mpmsg"]
 [ext_resource type="PackedScene" uid="uid://ciqo188h1ooom" path="res://Objet/bonus/Boots.tscn" id="8_2dnk3"]
 [ext_resource type="PackedScene" uid="uid://byf8oqqhp3xjg" path="res://Objet/bonus/Pickaxe.tscn" id="9_cmhfw"]
@@ -15,218 +15,219 @@
 [ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Player.tscn" id="13_83tnn"]
 [ext_resource type="PackedScene" uid="uid://dgs6tfu445bo6" path="res://Objet/Constructions/FragilePlateform.tscn" id="14_peawb"]
 
-[node name="Niveau9" type="Node2D"]
+[node name="Level9" type="Node2D"]
 script = ExtResource("1_bpe2c")
 
-[node name="limite" type="Node" parent="."]
+[node name="Limit" type="Node" parent="."]
 
-[node name="StaticBody2D3" parent="limite" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D3" parent="Limit" instance=ExtResource("2_66hu2")]
 visible = false
 position = Vector2(-15, 60)
 rotation = 1.5708
 
-[node name="StaticBody2D2" parent="limite" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D2" parent="Limit" instance=ExtResource("2_66hu2")]
 visible = false
 position = Vector2(977, 60)
 rotation = 1.5708
 
-[node name="StaticBody2D5" parent="limite" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D5" parent="Limit" instance=ExtResource("2_66hu2")]
 visible = false
 position = Vector2(480, -17)
 
-[node name="fond" parent="limite" instance=ExtResource("2_66hu2")]
+[node name="Background" parent="Limit" instance=ExtResource("2_66hu2")]
 position = Vector2(493, 868)
 scale = Vector2(2, 1)
 
-[node name="Fond" type="Sprite2D" parent="."]
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
 position = Vector2(480, 270)
 texture = ExtResource("3_4o74y")
 
-[node name="position ennemie" type="Node" parent="."]
+[node name="EnemyPosition" type="Node" parent="."]
 
-[node name="position1" type="Node2D" parent="position ennemie"]
+[node name="Position1" type="Node2D" parent="EnemyPosition"]
 position = Vector2(504, 164)
 
-[node name="position2" type="Node2D" parent="position ennemie"]
+[node name="Position2" type="Node2D" parent="EnemyPosition"]
 position = Vector2(692, 164)
 
-[node name="position3" type="Node2D" parent="position ennemie"]
+[node name="Position3" type="Node2D" parent="EnemyPosition"]
 position = Vector2(692, 294)
 
-[node name="position4" type="Node2D" parent="position ennemie"]
+[node name="Position4" type="Node2D" parent="EnemyPosition"]
 position = Vector2(504, 294)
 
 [node name="Menu" type="Node" parent="."]
 
-[node name="FinDeNiveau" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("4_h6q72")]
+[node name="EndLevel" parent="Menu" instance=ExtResource("4_h6q72")]
+visible = false
 position = Vector2(957, 88)
-player = NodePath("../../player")
 
 [node name="Pause" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("5_hc4je")]
+visible = false
 position = Vector2(-208, -32)
-player = NodePath("../../player")
+player = NodePath("../../Player")
 
-[node name="ennemies" type="Node" parent="."]
+[node name="Enemies" type="Node" parent="."]
 
-[node name="MonstreMouvement2" parent="ennemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("6_d6gd5")]
-position = Vector2(499, 294)
-position1 = NodePath("../../position ennemie/position3")
-position2 = NodePath("../../position ennemie/position4")
+[node name="MovingMonster2" parent="Enemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("6_d6gd5")]
+position = Vector2(500, 294)
+position1 = NodePath("../../EnemyPosition/Position3")
+position2 = NodePath("../../EnemyPosition/Position4")
 
-[node name="MonstreMouvement" parent="ennemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("6_d6gd5")]
-position = Vector2(698, 164)
-position1 = NodePath("../../position ennemie/position2")
-position2 = NodePath("../../position ennemie/position1")
+[node name="MovingMonster" parent="Enemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("6_d6gd5")]
+position = Vector2(694, 164)
+position1 = NodePath("../../EnemyPosition/Position2")
+position2 = NodePath("../../EnemyPosition/Position1")
 
-[node name="MonstreFixe3" parent="ennemies" instance=ExtResource("7_mpmsg")]
+[node name="FixedMonster3" parent="Enemies" instance=ExtResource("7_mpmsg")]
 position = Vector2(830, 219)
 
-[node name="bonus" type="Node" parent="."]
+[node name="Bonus" type="Node" parent="."]
 
-[node name="Bottes2" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots2" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(424, 457)
 
-[node name="Pioche" parent="bonus" instance=ExtResource("9_cmhfw")]
+[node name="Pickaxe" parent="Bonus" instance=ExtResource("9_cmhfw")]
 position = Vector2(432, 379)
 
-[node name="Bottes3" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots3" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(272, 375)
 
-[node name="Bottes4" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots4" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(343, 279)
 
-[node name="Pioche2" parent="bonus" instance=ExtResource("9_cmhfw")]
+[node name="Pickaxe2" parent="Bonus" instance=ExtResource("9_cmhfw")]
 position = Vector2(273, 314)
 
-[node name="Bottes5" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots5" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(425, 266)
 
-[node name="Pioche3" parent="bonus" instance=ExtResource("9_cmhfw")]
+[node name="Pickaxe3" parent="Bonus" instance=ExtResource("9_cmhfw")]
 position = Vector2(428, 198)
 
-[node name="Bottes6" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots6" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(344, 167)
 
-[node name="Bottes7" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots7" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(280, 171)
 
-[node name="Bottes" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(906, 472)
 
-[node name="Pioche4" parent="bonus" instance=ExtResource("9_cmhfw")]
+[node name="Pickaxe4" parent="Bonus" instance=ExtResource("9_cmhfw")]
 position = Vector2(913, 411)
 
-[node name="Bottes8" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots8" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(768, 405)
 
-[node name="Pioche5" parent="bonus" instance=ExtResource("9_cmhfw")]
+[node name="Pickaxe5" parent="Bonus" instance=ExtResource("9_cmhfw")]
 position = Vector2(765, 341)
 
-[node name="Bottes11" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots11" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(907, 221)
 
-[node name="Bottes12" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots12" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(907, 194)
 
-[node name="Pioche6" parent="bonus" instance=ExtResource("9_cmhfw")]
+[node name="Pickaxe6" parent="Bonus" instance=ExtResource("9_cmhfw")]
 position = Vector2(914, 162)
 
-[node name="Bottes9" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots9" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(833, 306)
 
-[node name="Bottes13" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots13" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(906, 276)
 
-[node name="Bottes14" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots14" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(768, 114)
 
-[node name="Bottes15" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots15" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(768, 87)
 
-[node name="Pioche7" parent="bonus" instance=ExtResource("9_cmhfw")]
+[node name="Pickaxe7" parent="Bonus" instance=ExtResource("9_cmhfw")]
 position = Vector2(763, 54)
 
-[node name="Bottes16" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots16" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(768, 187)
 
-[node name="Pioche8" parent="bonus" instance=ExtResource("9_cmhfw")]
+[node name="Pickaxe8" parent="Bonus" instance=ExtResource("9_cmhfw")]
 position = Vector2(195, 174)
 
-[node name="Levier" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("10_gc1l0")]
+[node name="Lever" parent="Bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("10_gc1l0")]
 position = Vector2(107, 271)
-plateforme = NodePath("../../Plateformes/porte")
+plateforme = NodePath("../../Platforms/Door")
 
-[node name="Bottes10" parent="bonus" instance=ExtResource("8_2dnk3")]
+[node name="Boots10" parent="Bonus" instance=ExtResource("8_2dnk3")]
 position = Vector2(155, 371)
 
-[node name="Plateformes" type="Node" parent="."]
+[node name="Platforms" type="Node" parent="."]
 
-[node name="StaticBody2D" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(-389, 76)
 
-[node name="StaticBody2D4" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D4" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(-8, 523)
 
-[node name="StaticBody2D3" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(430, 498)
 scale = Vector2(0.1, 1)
 
-[node name="StaticBody2D5" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D5" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(292, 409)
 scale = Vector2(0.1, 1)
 
-[node name="StaticBody2D6" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D6" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(427, 303)
 scale = Vector2(0.05, 1)
 
-[node name="StaticBody2D7" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D7" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(267, 205)
 scale = Vector2(0.1, 1)
 
-[node name="StaticBody2D8" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D8" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(1332, 115)
 
-[node name="StaticBody2D9" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D9" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(766, 427)
 scale = Vector2(0.11, 0.5)
 
-[node name="StaticBody2D10" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D10" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(1371, 319)
 
-[node name="StaticBody2D11" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D11" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(759, 218)
 scale = Vector2(0.05, 1)
 
-[node name="Mur" parent="Plateformes" instance=ExtResource("11_eghoo")]
+[node name="Wall" parent="Platforms" instance=ExtResource("11_eghoo")]
 position = Vector2(73, 555)
 rotation = 1.5708
 
-[node name="Mur3" parent="Plateformes" instance=ExtResource("11_eghoo")]
+[node name="Wall3" parent="Platforms" instance=ExtResource("11_eghoo")]
 position = Vector2(463, 622)
 rotation = 1.5708
 
-[node name="Mur5" parent="Plateformes" instance=ExtResource("11_eghoo")]
+[node name="Wall5" parent="Platforms" instance=ExtResource("11_eghoo")]
 position = Vector2(947, 604)
 rotation = -1.5708
 
-[node name="Mur4" parent="Plateformes" instance=ExtResource("11_eghoo")]
+[node name="Wall4" parent="Platforms" instance=ExtResource("11_eghoo")]
 position = Vector2(727, -58)
 rotation = 1.5708
 
-[node name="Mur2" parent="Plateformes" instance=ExtResource("11_eghoo")]
+[node name="Wall2" parent="Platforms" instance=ExtResource("11_eghoo")]
 position = Vector2(227, -52)
 rotation = 1.5708
 
-[node name="porte" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="Door" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(230, 460)
 rotation = 1.5708
 scale = Vector2(0.1, 0.5)
 
-[node name="StaticBody2D12" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D12" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(99, 298)
 scale = Vector2(0.05, 1)
 
-[node name="StaticBody2D2" parent="Plateformes" instance=ExtResource("2_66hu2")]
+[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("2_66hu2")]
 position = Vector2(1195, 528)
 
 [node name="CheckPoint3" parent="." instance=ExtResource("12_vv5o1")]
@@ -238,16 +239,16 @@ position = Vector2(465, 111)
 [node name="CheckPoint" parent="." instance=ExtResource("12_vv5o1")]
 position = Vector2(260, 479)
 
-[node name="player" parent="." instance=ExtResource("13_83tnn")]
+[node name="Player" parent="." instance=ExtResource("13_83tnn")]
 position = Vector2(21, 41)
 scale = Vector2(0.955272, 0.974049)
 
-[node name="Bottes" parent="." instance=ExtResource("8_2dnk3")]
+[node name="Boots" parent="." instance=ExtResource("8_2dnk3")]
 position = Vector2(614, 472)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("14_peawb")]
 position = Vector2(512, 369)
 scale = Vector2(0.2, 1)
 
-[node name="Pioche" parent="." instance=ExtResource("9_cmhfw")]
+[node name="Pickaxe" parent="." instance=ExtResource("9_cmhfw")]
 position = Vector2(497, 425)

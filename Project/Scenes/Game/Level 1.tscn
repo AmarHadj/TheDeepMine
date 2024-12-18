@@ -6,64 +6,56 @@
 [ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="4_dupiv"]
 [ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Player.tscn" id="5_e5ga3"]
 
-[node name="Game" type="Node2D"]
+[node name="Level1" type="Node2D"]
 
-[node name="limit" type="Node" parent="."]
+[node name="Limit" type="Node" parent="."]
 
-[node name="StaticBody2D3" parent="limit" instance=ExtResource("1_6o5al")]
+[node name="StaticBody2D3" parent="Limit" instance=ExtResource("1_6o5al")]
 visible = false
 position = Vector2(-15, 60)
 rotation = 1.5708
 
-[node name="StaticBody2D2" parent="limit" instance=ExtResource("1_6o5al")]
+[node name="StaticBody2D2" parent="Limit" instance=ExtResource("1_6o5al")]
 visible = false
 position = Vector2(977, 60)
 rotation = 1.5708
 
-[node name="StaticBody2D4" parent="limit" instance=ExtResource("1_6o5al")]
+[node name="StaticBody2D4" parent="Limit" instance=ExtResource("1_6o5al")]
 visible = false
 position = Vector2(480, 555)
 
-[node name="StaticBody2D5" parent="limit" instance=ExtResource("1_6o5al")]
+[node name="StaticBody2D5" parent="Limit" instance=ExtResource("1_6o5al")]
 visible = false
 position = Vector2(480, -17)
 
-[node name="Fond" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(480, 270)
 texture = ExtResource("2_r3fou")
 
-[node name="Plateformes" type="Node" parent="."]
+[node name="Platforms" type="Node" parent="."]
 
-[node name="StaticBody2D" parent="Plateformes" instance=ExtResource("1_6o5al")]
+[node name="StaticBody2D" parent="Platforms" instance=ExtResource("1_6o5al")]
 position = Vector2(-66, 189)
 
-[node name="StaticBody2D2" parent="Plateformes" instance=ExtResource("1_6o5al")]
+[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("1_6o5al")]
 position = Vector2(1014, 303)
 
-[node name="StaticBody2D3" parent="Plateformes" instance=ExtResource("1_6o5al")]
+[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("1_6o5al")]
 position = Vector2(-39, 424)
 
-[node name="StaticBody2D4" parent="Plateformes" instance=ExtResource("1_6o5al")]
+[node name="StaticBody2D4" parent="Platforms" instance=ExtResource("1_6o5al")]
 position = Vector2(480, 523)
-
-[node name="position ennemie" type="Node" parent="."]
-
-[node name="position2" type="Node2D" parent="position ennemie"]
-position = Vector2(581, 281)
-
-[node name="position1" type="Node2D" parent="position ennemie"]
-position = Vector2(757, 281)
 
 [node name="Menu" type="Node" parent="."]
 
-[node name="FinDeNiveau" parent="Menu" instance=ExtResource("3_hm6lp")]
+[node name="EndOfLevel" parent="Menu" instance=ExtResource("3_hm6lp")]
 position = Vector2(960, 503)
 
 [node name="Pause" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("4_dupiv")]
 position = Vector2(-208, -32)
 player = NodePath("../../player")
 
-[node name="ennemies" type="Node" parent="."]
+[node name="enemies" type="Node" parent="."]
 
 [node name="bonus" type="Node" parent="."]
 
