@@ -1,4 +1,5 @@
 extends Node2D
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 var hasBeenTouched = false
 func _on_area_2d_area_entered(_area):
@@ -17,6 +18,7 @@ func verifyBonus(bonus : bool) -> bool:
 	else : 
 		return false
 func checkpoint():
+	animated_sprite_2d.play("touched")
 	PlayerVar.spawnPosition = self.global_position
 	PlayerVar.hasPickTemp = verifyBonus(PlayerVar.hasPick)
 	PlayerVar.hasWingsTemp = verifyBonus(PlayerVar.hasWings)

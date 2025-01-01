@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctwgpcsbunbsp"]
+[gd_scene load_steps=14 format=3 uid="uid://ctwgpcsbunbsp"]
 
 [ext_resource type="Script" path="res://Scripts/Level/Level.gd" id="1_guh1s"]
 [ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Constructions/plateform.tscn" id="2_au2ua"]
@@ -8,8 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ct33vu80uve6o" path="res://Objet/Constructions/Wall.tscn" id="6_qkur2"]
 [ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Game/EndOfLevel.tscn" id="7_5h8uk"]
 [ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="8_lnhfy"]
-[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/MonsterIdle.tscn" id="9_o6ydh"]
-[ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/entite/MovingMonster.tscn" id="10_5pb14"]
+[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/Monster.tscn" id="9_o6ydh"]
 [ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/Lever.tscn" id="11_xairl"]
 [ext_resource type="PackedScene" uid="uid://d4ne85hxng3fu" path="res://Objet/bonus/Wings.tscn" id="12_jx0fg"]
 [ext_resource type="PackedScene" uid="uid://ciqo188h1ooom" path="res://Objet/bonus/Boots.tscn" id="13_uq78t"]
@@ -101,6 +100,20 @@ position = Vector2(62, 371)
 [node name="position4" type="Node2D" parent="enemy_positions"]
 position = Vector2(356, 371)
 
+[node name="enemies" type="Node" parent="."]
+
+[node name="FixedMonster3" parent="enemies" instance=ExtResource("9_o6ydh")]
+position = Vector2(766, 167)
+
+[node name="FixedMonster4" parent="enemies" instance=ExtResource("9_o6ydh")]
+position = Vector2(700, 139)
+
+[node name="FixedMonster5" parent="enemies" instance=ExtResource("9_o6ydh")]
+position = Vector2(316, 275)
+
+[node name="FixedMonster6" parent="enemies" instance=ExtResource("9_o6ydh")]
+position = Vector2(558, 278)
+
 [node name="Menu" type="Node" parent="."]
 
 [node name="LevelEnd" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("7_5h8uk")]
@@ -112,30 +125,6 @@ player = NodePath("../../player")
 [node name="Pause" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("8_lnhfy")]
 position = Vector2(-72, 355)
 player = NodePath("../../player")
-
-[node name="enemies" type="Node" parent="."]
-
-[node name="FixedMonster3" parent="enemies" instance=ExtResource("9_o6ydh")]
-position = Vector2(766, 167)
-
-[node name="MovingMonster" parent="enemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("10_5pb14")]
-position = Vector2(472, 113)
-position1 = NodePath("../../enemy_positions/position1")
-position2 = NodePath("../../enemy_positions/position2")
-
-[node name="FixedMonster4" parent="enemies" instance=ExtResource("9_o6ydh")]
-position = Vector2(700, 139)
-
-[node name="FixedMonster5" parent="enemies" instance=ExtResource("9_o6ydh")]
-position = Vector2(316, 275)
-
-[node name="FixedMonster6" parent="enemies" instance=ExtResource("9_o6ydh")]
-position = Vector2(558, 278)
-
-[node name="MovingMonster2" parent="enemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("10_5pb14")]
-position = Vector2(158, 371)
-position1 = NodePath("../../enemy_positions/position4")
-position2 = NodePath("../../enemy_positions/position3")
 
 [node name="bonus" type="Node" parent="."]
 
@@ -159,3 +148,13 @@ position = Vector2(437, 246)
 [node name="player" parent="." instance=ExtResource("14_2dh5o")]
 position = Vector2(21, 57)
 scale = Vector2(0.955272, 0.974049)
+
+[node name="MonstreFixe" parent="." node_paths=PackedStringArray("position1", "position2") instance=ExtResource("9_o6ydh")]
+position = Vector2(472, 113)
+position1 = NodePath("../enemy_positions/position1")
+position2 = NodePath("../enemy_positions/position2")
+
+[node name="MonstreFixe2" parent="." node_paths=PackedStringArray("position1", "position2") instance=ExtResource("9_o6ydh")]
+position = Vector2(158, 371)
+position1 = NodePath("../enemy_positions/position4")
+position2 = NodePath("../enemy_positions/position3")

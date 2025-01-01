@@ -1,45 +1,70 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8ux2pewc8jj8"]
+[gd_scene load_steps=10 format=3 uid="uid://b8ux2pewc8jj8"]
 
-[ext_resource type="Script" path="res://Scripts/Entite/MonsterIdle.gd" id="1_5ph5v"]
-[ext_resource type="Texture2D" uid="uid://dkxqih3xtsdf7" path="res://Art/Monster.png" id="2_1ijfm"]
+[ext_resource type="Script" path="res://Scripts/Entite/Monster.gd" id="1_sdxd4"]
+[ext_resource type="Texture2D" uid="uid://bhrmxo2257ge3" path="res://Art/SpritesheetMonster.png" id="2_nlchh"]
 [ext_resource type="PackedScene" uid="uid://c584bi5h3inla" path="res://Objet/entite/bounce_area.tscn" id="3_duraf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b2d6"]
 size = Vector2(32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_41cv1"]
+atlas = ExtResource("2_nlchh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kitv3"]
+atlas = ExtResource("2_nlchh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ishq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41cv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kitv3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ki7r0"]
-size = Vector2(34, 31.5)
+size = Vector2(32, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwvhx"]
-size = Vector2(32, 3)
+size = Vector2(34, 3)
 
-[node name="MonstreFixe" type="CharacterBody2D"]
+[node name="MonstreMouvement" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_5ph5v")
+script = ExtResource("1_sdxd4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_6b2d6")
 
-[node name="Monstre" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
-texture = ExtResource("2_1ijfm")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(1, 1.03125)
+sprite_frames = SubResource("SpriteFrames_ishq6")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 1.25)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_ki7r0")
 
 [node name="bounceArea" parent="." instance=ExtResource("3_duraf")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bounceArea"]
-position = Vector2(0, -15.5)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_xwvhx")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

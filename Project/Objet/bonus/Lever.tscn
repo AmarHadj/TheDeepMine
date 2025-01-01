@@ -1,7 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5rjaox6jjmv8"]
+[gd_scene load_steps=7 format=3 uid="uid://b5rjaox6jjmv8"]
 
 [ext_resource type="Script" path="res://Scripts/Bonus/Lever.gd" id="1_jft58"]
-[ext_resource type="Texture2D" uid="uid://c6o1ml8auhih6" path="res://Art/Lever.png" id="2_n7560"]
+[ext_resource type="Texture2D" uid="uid://d170scsurflaj" path="res://Art/Levier-Sheet.png" id="2_k7hc6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gj2k"]
+atlas = ExtResource("2_k7hc6")
+region = Rect2(13, 0, 13, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlqnu"]
+atlas = ExtResource("2_k7hc6")
+region = Rect2(0, 0, 13, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2doj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gj2k")
+}],
+"loop": true,
+"name": &"activated",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlqnu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0cxe"]
 size = Vector2(20, 13.5)
@@ -9,8 +36,9 @@ size = Vector2(20, 13.5)
 [node name="Levier" type="Node2D"]
 script = ExtResource("1_jft58")
 
-[node name="Levier" type="Sprite2D" parent="."]
-texture = ExtResource("2_n7560")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w2doj")
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
 

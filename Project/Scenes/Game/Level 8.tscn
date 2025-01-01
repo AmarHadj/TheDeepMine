@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/Background.png" id="3_8whw3"]
 [ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="4_mi7us"]
 [ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Game/EndOfLevel.tscn" id="5_dcfjs"]
-[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/MonsterIdle.tscn" id="6_3qjo5"]
+[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/Monster.tscn" id="6_3qjo5"]
 [ext_resource type="PackedScene" uid="uid://claknm88qq2ar" path="res://Objet/Constructions/Spike.tscn" id="7_u55jh"]
 [ext_resource type="PackedScene" uid="uid://d4ne85hxng3fu" path="res://Objet/bonus/Wings.tscn" id="8_u5nwi"]
 [ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/Lever.tscn" id="9_mlfwf"]
@@ -67,9 +67,6 @@ position = Vector2(657, 225)
 
 [node name="spike 1" type="Node" parent="spikes"]
 
-[node name="StaticBody2D2" parent="spikes/spike 1" instance=ExtResource("2_t06e1")]
-position = Vector2(-97, 227)
-
 [node name="Spikes" parent="spikes/spike 1" instance=ExtResource("7_u55jh")]
 position = Vector2(47, 221)
 
@@ -108,53 +105,38 @@ position = Vector2(15, 221)
 
 [node name="spike 2" type="Node" parent="spikes"]
 
-[node name="StaticBody2D2" parent="spikes/spike 2" instance=ExtResource("2_t06e1")]
-position = Vector2(1055, 363)
-rotation = 3.14159
-
 [node name="Spikes" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(591, 359)
-rotation = 3.14159
 
 [node name="Spikes2" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(623, 359)
-rotation = 3.14159
 
 [node name="Spikes3" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(655, 359)
-rotation = 3.14159
 
 [node name="Spikes4" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(687, 359)
-rotation = 3.14159
 
 [node name="Spikes5" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(719, 359)
-rotation = 3.14159
 
 [node name="Spikes6" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(751, 359)
-rotation = 3.14159
 
 [node name="Spikes7" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(783, 359)
-rotation = 3.14159
 
 [node name="Spikes8" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(815, 359)
-rotation = 3.14159
 
 [node name="Spikes9" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(847, 359)
-rotation = 3.14159
 
 [node name="Spikes10" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(879, 359)
-rotation = 3.14159
 
 [node name="Spikes11" parent="spikes/spike 2" instance=ExtResource("7_u55jh")]
 position = Vector2(911, 359)
-rotation = 3.14159
 
 [node name="bonus" type="Node" parent="."]
 
@@ -165,7 +147,7 @@ position = Vector2(310, 43)
 position = Vector2(658, 274)
 
 [node name="Lever" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("9_mlfwf")]
-position = Vector2(884, 228)
+position = Vector2(884, 229)
 plateforme = NodePath("../../Platforms/doors/door")
 
 [node name="Boots" parent="bonus" instance=ExtResource("10_ihqaq")]

@@ -86,7 +86,7 @@ player = NodePath("../../player")
 [node name="Bonuses" type="Node" parent="."]
 
 [node name="lever" parent="Bonuses" node_paths=PackedStringArray("plateforme") instance=ExtResource("9_jehwt")]
-position = Vector2(782, 216)
+position = Vector2(782, 220)
 plateforme = NodePath("../../Platforms/Door")
 
 [node name="Boots2" parent="Bonuses" instance=ExtResource("10_jouxe")]

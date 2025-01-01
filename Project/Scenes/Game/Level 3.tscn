@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/Background.png" id="2_5ugy2"]
 [ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Constructions/plateform.tscn" id="3_pmx6y"]
 [ext_resource type="PackedScene" uid="uid://0ftw2gt0pncv" path="res://Objet/bonus/CheckPoint.tscn" id="4_3sp8t"]
-[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/MonsterIdle.tscn" id="5_03r5o"]
+[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/Monster.tscn" id="5_03r5o"]
 [ext_resource type="PackedScene" uid="uid://dgs6tfu445bo6" path="res://Objet/Constructions/FragilePlateform.tscn" id="6_av5qw"]
 [ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Game/EndOfLevel.tscn" id="7_4iwae"]
 [ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="8_ym3rs"]

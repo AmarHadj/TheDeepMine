@@ -1,12 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddgxpcixlui2m"]
+[gd_scene load_steps=14 format=3 uid="uid://ddgxpcixlui2m"]
 
 [ext_resource type="Script" path="res://Scripts/Level/Level.gd" id="1_bpe2c"]
 [ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Constructions/plateform.tscn" id="2_66hu2"]
 [ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/Background.png" id="3_4o74y"]
 [ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Game/EndOfLevel.tscn" id="4_h6q72"]
 [ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="5_hc4je"]
-[ext_resource type="PackedScene" uid="uid://ossu14s46i56" path="res://Objet/entite/MovingMonster.tscn" id="6_d6gd5"]
-[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/MonsterIdle.tscn" id="7_mpmsg"]
+[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/Monster.tscn" id="7_mpmsg"]
 [ext_resource type="PackedScene" uid="uid://ciqo188h1ooom" path="res://Objet/bonus/Boots.tscn" id="8_2dnk3"]
 [ext_resource type="PackedScene" uid="uid://byf8oqqhp3xjg" path="res://Objet/bonus/Pickaxe.tscn" id="9_cmhfw"]
 [ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/Lever.tscn" id="10_gc1l0"]
@@ -65,21 +64,11 @@ position = Vector2(957, 88)
 [node name="Pause" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("5_hc4je")]
 visible = false
 position = Vector2(-208, -32)
-player = NodePath("../../Player")
+player = NodePath("../../player")
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="MovingMonster2" parent="Enemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("6_d6gd5")]
-position = Vector2(500, 294)
-position1 = NodePath("../../EnemyPosition/Position3")
-position2 = NodePath("../../EnemyPosition/Position4")
-
-[node name="MovingMonster" parent="Enemies" node_paths=PackedStringArray("position1", "position2") instance=ExtResource("6_d6gd5")]
-position = Vector2(694, 164)
-position1 = NodePath("../../EnemyPosition/Position2")
-position2 = NodePath("../../EnemyPosition/Position1")
-
-[node name="FixedMonster3" parent="Enemies" instance=ExtResource("7_mpmsg")]
+[node name="FixedMonster" parent="Enemies" instance=ExtResource("7_mpmsg")]
 position = Vector2(830, 219)
 
 [node name="Bonus" type="Node" parent="."]
@@ -154,7 +143,7 @@ position = Vector2(768, 187)
 position = Vector2(195, 174)
 
 [node name="Lever" parent="Bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("10_gc1l0")]
-position = Vector2(107, 271)
+position = Vector2(107, 272)
 plateforme = NodePath("../../Platforms/Door")
 
 [node name="Boots10" parent="Bonus" instance=ExtResource("8_2dnk3")]
@@ -239,7 +228,7 @@ position = Vector2(465, 111)
 [node name="CheckPoint" parent="." instance=ExtResource("12_vv5o1")]
 position = Vector2(260, 479)
 
-[node name="Player" parent="." instance=ExtResource("13_83tnn")]
+[node name="player" parent="." instance=ExtResource("13_83tnn")]
 position = Vector2(21, 41)
 scale = Vector2(0.955272, 0.974049)
 
@@ -252,3 +241,13 @@ scale = Vector2(0.2, 1)
 
 [node name="Pickaxe" parent="." instance=ExtResource("9_cmhfw")]
 position = Vector2(497, 425)
+
+[node name="MonstreFixe" parent="." node_paths=PackedStringArray("position1", "position2") instance=ExtResource("7_mpmsg")]
+position = Vector2(694, 164)
+position1 = NodePath("../EnemyPosition/Position2")
+position2 = NodePath("../EnemyPosition/Position1")
+
+[node name="MonstreFixe2" parent="." node_paths=PackedStringArray("position1", "position2") instance=ExtResource("7_mpmsg")]
+position = Vector2(500, 294)
+position1 = NodePath("../EnemyPosition/Position3")
+position2 = NodePath("../EnemyPosition/Position4")

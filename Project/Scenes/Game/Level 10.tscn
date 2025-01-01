@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ct33vu80uve6o" path="res://Objet/Constructions/Wall.tscn" id="7_nvgpr"]
 [ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Game/EndOfLevel.tscn" id="8_pctt3"]
 [ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="9_1avyy"]
-[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/MonsterIdle.tscn" id="10_opc55"]
+[ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/Monster.tscn" id="10_opc55"]
 [ext_resource type="PackedScene" uid="uid://ciqo188h1ooom" path="res://Objet/bonus/Boots.tscn" id="11_f4pdh"]
 [ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/Lever.tscn" id="12_svye2"]
 [ext_resource type="PackedScene" uid="uid://byf8oqqhp3xjg" path="res://Objet/bonus/Pickaxe.tscn" id="13_6irfb"]
@@ -62,10 +62,6 @@ position = Vector2(331, 187)
 [node name="StaticBody2D3" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(-425, 83)
 
-[node name="StaticBody2D4" parent="Platforms" instance=ExtResource("2_asygr")]
-position = Vector2(160, 145)
-scale = Vector2(1, 0.4)
-
 [node name="StaticBody2D5" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(1313, 145)
 scale = Vector2(1, 0.4)
@@ -73,10 +69,6 @@ scale = Vector2(1, 0.4)
 [node name="StaticBody2D6" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(454, 223)
 scale = Vector2(0.5, 0.5)
-
-[node name="StaticBody2D7" parent="Platforms" instance=ExtResource("2_asygr")]
-position = Vector2(319, 360)
-scale = Vector2(1, 0.5)
 
 [node name="StaticBody2D8" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(586, 566)
@@ -93,9 +85,6 @@ position = Vector2(-92, 533)
 
 [node name="StaticBody2D" parent="Platforms" instance=ExtResource("2_asygr")]
 position = Vector2(1397, 377)
-
-[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("2_asygr")]
-position = Vector2(1049, 533)
 
 [node name="StaticBody2D11" parent="Platforms" instance=ExtResource("5_re3lh")]
 position = Vector2(151, 97)
@@ -166,7 +155,7 @@ position = Vector2(435, -16.6666)
 scale = Vector2(4, 1)
 
 [node name="Pics" parent="Platforms/Doors/FinalDoor" instance=ExtResource("6_brijs")]
-position = Vector2(-530, -226.667)
+position = Vector2(-530, -260)
 scale = Vector2(5, 3.33333)
 
 [node name="Walls" type="Node" parent="Platforms"]
@@ -464,7 +453,7 @@ position = Vector2(558, 433)
 position = Vector2(496, 390)
 
 [node name="Lever3" parent="bonus" node_paths=PackedStringArray("plateforme") instance=ExtResource("12_svye2")]
-position = Vector2(60, 458)
+position = Vector2(60, 453)
 plateforme = NodePath("../../Platforms/Doors/FinalDoor")
 
 [node name="player" parent="." instance=ExtResource("15_myv5t")]
