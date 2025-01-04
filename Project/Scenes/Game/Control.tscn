@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxsw6b67yldan"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/Control.gd" id="1_8dl7l"]
+[ext_resource type="Texture2D" uid="uid://by1ficbxsgu65" path="res://Art/Control_page.png" id="1_ths3g"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8dl7l")
+
+[node name="ControlPage" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("1_ths3g")
+
+[node name="return" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 467.0
+offset_right = 149.0
+offset_bottom = 523.0
+text = "return
+"
+flat = true
+
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]

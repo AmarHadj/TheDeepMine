@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://s5fnn3y262dx" path="res://Objet/Constructions/plateform.tscn" id="1_f264b"]
 [ext_resource type="Texture2D" uid="uid://bvyhaj0e5byhs" path="res://Art/Background.png" id="2_q5yni"]
 [ext_resource type="PackedScene" uid="uid://d4ne85hxng3fu" path="res://Objet/bonus/Wings.tscn" id="3_0tic6"]
-[ext_resource type="PackedScene" uid="uid://soanf34dtq3c" path="res://Objet/bonus/Lever 2.tscn" id="4_n0g3l"]
+[ext_resource type="PackedScene" uid="uid://soanf34dtq3c" path="res://Objet/bonus/PlateformLever.tscn" id="4_n0g3l"]
 [ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="5_lnufc"]
 [ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Game/EndOfLevel.tscn" id="6_kmijl"]
 [ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Player.tscn" id="7_jgiw1"]

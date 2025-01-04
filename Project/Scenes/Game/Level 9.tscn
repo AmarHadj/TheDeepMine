@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/Monster.tscn" id="7_mpmsg"]
 [ext_resource type="PackedScene" uid="uid://ciqo188h1ooom" path="res://Objet/bonus/Boots.tscn" id="8_2dnk3"]
 [ext_resource type="PackedScene" uid="uid://byf8oqqhp3xjg" path="res://Objet/bonus/Pickaxe.tscn" id="9_cmhfw"]
-[ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/Lever.tscn" id="10_gc1l0"]
+[ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/DoorLever.tscn" id="10_gc1l0"]
 [ext_resource type="PackedScene" uid="uid://ct33vu80uve6o" path="res://Objet/Constructions/Wall.tscn" id="11_eghoo"]
 [ext_resource type="PackedScene" uid="uid://0ftw2gt0pncv" path="res://Objet/bonus/CheckPoint.tscn" id="12_vv5o1"]
 [ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Player.tscn" id="13_83tnn"]

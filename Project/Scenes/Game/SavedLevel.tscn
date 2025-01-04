@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Level/Level.gd" id="1_6r58k"]
+[ext_resource type="PackedScene" path="res://Objet/Constructions/plateform.tscn" id="2_hw88c"]
+[ext_resource type="Texture2D" path="res://Art/Background.png" id="3_m8xfk"]
+[ext_resource type="PackedScene" path="res://Objet/bonus/CheckPoint.tscn" id="4_s0rjw"]
+[ext_resource type="Script" path="res://Scripts/Bonus/CheckPoint.gd" id="5_mylqp"]
+[ext_resource type="PackedScene" path="res://Objet/bonus/PlateformLever.tscn" id="10_wqbpy"]
+[ext_resource type="Script" path="res://Scripts/Bonus/PlateformLever.gd" id="11_ujnhe"]
+[ext_resource type="PackedScene" path="res://Objet/Constructions/thank you !.tscn" id="12_pr4nu"]
+[ext_resource type="PackedScene" path="res://Scenes/Game/Pause.tscn" id="14_qopt1"]
+[ext_resource type="Script" path="res://Scripts/Level/Observer.gd" id="15_37xj7"]
+[ext_resource type="PackedScene" path="res://Objet/entite/Player.tscn" id="26_vuold"]
+[ext_resource type="Script" path="res://Scripts/Entite/Player.gd" id="27_o0ljn"]
+
+[node name="Level11" type="Node2D"]
+script = ExtResource("1_6r58k")
+
+[node name="Limit" type="Node" parent="."]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Limit" instance=ExtResource("2_hw88c")]
+visible = false
+position = Vector2(-15, 60)
+rotation = 1.5708
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Limit" instance=ExtResource("2_hw88c")]
+visible = false
+position = Vector2(977, 60)
+rotation = 1.5708
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Limit" instance=ExtResource("2_hw88c")]
+position = Vector2(492, 782)
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Limit" instance=ExtResource("2_hw88c")]
+visible = false
+position = Vector2(480, -17)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("3_m8xfk")
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="Pause" type="Node2D" parent="Menu" node_paths=PackedStringArray("player") instance=ExtResource("14_qopt1")]
+position = Vector2(-72, 355)
+script = ExtResource("15_37xj7")
+player = NodePath("../../player")
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms" instance=ExtResource("2_hw88c")]
+position = Vector2(479, 87)
+scale = Vector2(0.2, 1)
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="Platforms" instance=ExtResource("2_hw88c")]
+position = Vector2(560, 31)
+rotation = 1.5708
+scale = Vector2(0.15, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Platforms" instance=ExtResource("2_hw88c")]
+position = Vector2(-80, 212)
+
+[node name="player" type="CharacterBody2D" parent="." groups=["Joueurs"] instance=ExtResource("26_vuold")]
+position = Vector2(178.666, 177.444)
+scale = Vector2(0.955272, 0.974049)
+collision_layer = 2
+collision_mask = 3
+velocity = Vector2(-200, 0)
+script = ExtResource("27_o0ljn")
+
+[node name="CheckPoint" type="Node2D" parent="." instance=ExtResource("4_s0rjw")]
+position = Vector2(149, 168)
+script = ExtResource("5_mylqp")
+
+[node name="Levier" type="Node2D" parent="." node_paths=PackedStringArray("plateforme") instance=ExtResource("10_wqbpy")]
+position = Vector2(50, 186)
+script = ExtResource("11_ujnhe")
+plateforme = NodePath("../thank you !")
+x = 639.0
+y = 270.0
+
+[node name="thank you !" type="Node2D" parent="." instance=ExtResource("12_pr4nu")]
+position = Vector2(1155, 278)

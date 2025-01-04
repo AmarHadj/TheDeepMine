@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://0jjhpoiqdib4" path="res://Scenes/Game/EndOfLevel.tscn" id="7_nu5jc"]
 [ext_resource type="PackedScene" uid="uid://bcve0ydl22vlc" path="res://Scenes/Game/Pause.tscn" id="8_7twmm"]
 [ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/Monster.tscn" id="10_10jte"]
-[ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/Lever.tscn" id="11_8k3x5"]
+[ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/DoorLever.tscn" id="11_8k3x5"]
 [ext_resource type="PackedScene" uid="uid://ciqo188h1ooom" path="res://Objet/bonus/Boots.tscn" id="12_618ag"]
-[ext_resource type="PackedScene" uid="uid://soanf34dtq3c" path="res://Objet/bonus/Lever 2.tscn" id="13_7dddu"]
+[ext_resource type="PackedScene" uid="uid://soanf34dtq3c" path="res://Objet/bonus/PlateformLever.tscn" id="13_7dddu"]
 [ext_resource type="PackedScene" uid="uid://b6h6uy02l64em" path="res://Objet/entite/Player.tscn" id="14_e0k04"]
 [ext_resource type="PackedScene" uid="uid://d4ne85hxng3fu" path="res://Objet/bonus/Wings.tscn" id="15_jb0cf"]
 
@@ -148,7 +148,7 @@ position = Vector2(630, 95)
 position = Vector2(477, 95)
 
 [node name="player" parent="." instance=ExtResource("14_e0k04")]
-position = Vector2(20, 67)
+position = Vector2(24.9998, 59)
 scale = Vector2(0.955272, 0.974049)
 
 [node name="Wings" parent="." instance=ExtResource("15_jb0cf")]

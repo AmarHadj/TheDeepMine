@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ux2pewc8jj8" path="res://Objet/entite/Monster.tscn" id="6_3qjo5"]
 [ext_resource type="PackedScene" uid="uid://claknm88qq2ar" path="res://Objet/Constructions/Spike.tscn" id="7_u55jh"]
 [ext_resource type="PackedScene" uid="uid://d4ne85hxng3fu" path="res://Objet/bonus/Wings.tscn" id="8_u5nwi"]
-[ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/Lever.tscn" id="9_mlfwf"]
+[ext_resource type="PackedScene" uid="uid://b5rjaox6jjmv8" path="res://Objet/bonus/DoorLever.tscn" id="9_mlfwf"]
 [ext_resource type="PackedScene" uid="uid://ciqo188h1ooom" path="res://Objet/bonus/Boots.tscn" id="10_ihqaq"]
 [ext_resource type="PackedScene" uid="uid://byf8oqqhp3xjg" path="res://Objet/bonus/Pickaxe.tscn" id="11_kn1p1"]
 [ext_resource type="PackedScene" uid="uid://dgs6tfu445bo6" path="res://Objet/Constructions/FragilePlateform.tscn" id="12_2a7gt"]
@@ -62,6 +62,12 @@ position = Vector2(775, 491)
 
 [node name="FixedMonster2" parent="enemies" instance=ExtResource("6_3qjo5")]
 position = Vector2(657, 225)
+
+[node name="FixedMonster3" parent="enemies" instance=ExtResource("6_3qjo5")]
+position = Vector2(582, 493)
+
+[node name="FixedMonster4" parent="enemies" instance=ExtResource("6_3qjo5")]
+position = Vector2(389, 493)
 
 [node name="spikes" type="Node" parent="."]
 
@@ -163,6 +169,12 @@ position = Vector2(678, 457)
 position = Vector2(80, 330)
 plateforme = NodePath("../../Platforms/doors/final door")
 
+[node name="Boots3" parent="bonus" instance=ExtResource("10_ihqaq")]
+position = Vector2(485, 459)
+
+[node name="Boots4" parent="bonus" instance=ExtResource("10_ihqaq")]
+position = Vector2(883, 196)
+
 [node name="Platforms" type="Node" parent="."]
 
 [node name="StaticBody2D" parent="Platforms" instance=ExtResource("2_t06e1")]
@@ -233,7 +245,7 @@ rotation = 1.5708
 scale = Vector2(0.1, 0.5)
 
 [node name="CheckPoint2" parent="." instance=ExtResource("14_bakij")]
-position = Vector2(49, 313)
+position = Vector2(33, 312)
 
 [node name="CheckPoint3" parent="." instance=ExtResource("14_bakij")]
 position = Vector2(480, 177)
@@ -242,17 +254,5 @@ position = Vector2(480, 177)
 position = Vector2(935, 211)
 
 [node name="player" parent="." instance=ExtResource("15_1g5rn")]
-position = Vector2(472, 20)
+position = Vector2(470, 45)
 scale = Vector2(0.955272, 0.974049)
-
-[node name="FixedMonster" parent="." instance=ExtResource("6_3qjo5")]
-position = Vector2(582, 493)
-
-[node name="FixedMonster2" parent="." instance=ExtResource("6_3qjo5")]
-position = Vector2(389, 493)
-
-[node name="Boots3" parent="." instance=ExtResource("10_ihqaq")]
-position = Vector2(485, 459)
-
-[node name="Boots" parent="." instance=ExtResource("10_ihqaq")]
-position = Vector2(883, 196)

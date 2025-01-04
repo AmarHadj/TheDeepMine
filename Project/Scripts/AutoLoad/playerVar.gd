@@ -1,6 +1,6 @@
 extends Node
 
-var level = 1
+var level = 9
 var hasWings = false
 var hasBoots = 0
 var hasPick = false
