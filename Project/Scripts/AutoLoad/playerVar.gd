@@ -20,5 +20,3 @@ func set_all_bonus_false() :
 	hasWingsTemp = false
 	hasBootsTemp = false
 	hasPickTemp = false
-
-

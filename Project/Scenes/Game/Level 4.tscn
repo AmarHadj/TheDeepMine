@@ -52,7 +52,7 @@ position = Vector2(-194, 117)
 position = Vector2(1006, 246)
 
 [node name="StaticBody2D4" parent="Platforms" instance=ExtResource("2_fcik5")]
-position = Vector2(1440, 523)
+position = Vector2(1440, 522)
 
 [node name="StaticBody2D3" parent="Platforms" instance=ExtResource("2_fcik5")]
 position = Vector2(-343, 461)

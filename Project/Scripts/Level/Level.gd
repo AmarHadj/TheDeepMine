@@ -16,10 +16,3 @@ func _process(delta):
 		var scene = PackedScene.new()
 		scene.pack(savedScene)
 		ResourceSaver.save(scene, "res://Scenes/Game/SavedLevel.tscn")
-
-
-
-
-
-
-

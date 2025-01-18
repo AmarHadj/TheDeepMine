@@ -118,5 +118,3 @@ func bounce (bounce_velocity = BOUNCE_VELOCITY):
 func _on_timer_timeout():
 	is_floating = false
 	TimerWings.stop()
-
-
